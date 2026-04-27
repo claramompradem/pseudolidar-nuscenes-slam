@@ -1,0 +1,246 @@
+from __future__ import annotations
+
+import argparse
+import json
+import math
+from pathlib import Path
+from typing import Callable, Dict, List
+
+import numpy as np
+import open3d as o3d
+from nuscenes.nuscenes import NuScenes
+from pyquaternion import Quaternion
+
+
+def transform_from_translation_rotation(translation: List[float], rotation: List[float]) -> np.ndarray:
+    transform = np.eye(4, dtype=np.float64)
+    transform[:3, :3] = Quaternion(rotation).rotation_matrix
+    transform[:3, 3] = np.asarray(translation, dtype=np.float64)
+    return transform
+
+
+def pose_global_from_sample(nusc: NuScenes, sample_token: str) -> np.ndarray:
+    sample = nusc.get("sample", sample_token)
+    lidar_sd = nusc.get("sample_data", sample["data"]["LIDAR_TOP"])
+    ego_pose = nusc.get("ego_pose", lidar_sd["ego_pose_token"])
+    return transform_from_translation_rotation(ego_pose["translation"], ego_pose["rotation"])
+
+
+def relative_transform(source_global: np.ndarray, target_global: np.ndarray) -> np.ndarray:
+    return np.linalg.inv(target_global) @ source_global
+
+
+def rotation_angle_deg(transform: np.ndarray) -> float:
+    r = transform[:3, :3]
+    trace = np.clip((np.trace(r) - 1.0) * 0.5, -1.0, 1.0)
+    return math.degrees(math.acos(trace))
+
+
+def translation_norm(transform: np.ndarray) -> float:
+    return float(np.linalg.norm(transform[:3, 3]))
+
+
+def transform_error(est: np.ndarray, gt: np.ndarray) -> Dict[str, float]:
+    delta = np.linalg.inv(gt) @ est
+    return {
+        "translation_error_m": translation_norm(delta),
+        "rotation_error_deg": rotation_angle_deg(delta),
+    }
+
+
+def load_points(path: Path) -> np.ndarray:
+    pcd = o3d.io.read_point_cloud(str(path))
+    return np.asarray(pcd.points, dtype=np.float64)
+
+
+def front_mask(
+    points: np.ndarray,
+    *,
+    r_min: float = 2.0,
+    r_max: float = 35.0,
+    z_min: float = -2.0,
+    z_max: float = 2.5,
+    max_abs_y: float = 15.0,
+    min_x: float = 0.0,
+) -> np.ndarray:
+    x, y, z = points[:, 0], points[:, 1], points[:, 2]
+    r = np.linalg.norm(points[:, :3], axis=1)
+    mask = (r >= r_min) & (r <= r_max) & (z >= z_min) & (z <= z_max)
+    mask &= (x > min_x) & (np.abs(y) < max_abs_y)
+    return mask
+
+
+def get_selection_strategies() -> Dict[str, Callable[[np.ndarray], np.ndarray]]:
+    return {
+        "front_baseline": lambda pts: pts[
+            front_mask(pts, r_min=2.0, r_max=35.0, z_min=-2.0, z_max=2.5, max_abs_y=15.0, min_x=0.0)
+        ],
+        "front_narrow": lambda pts: pts[
+            front_mask(pts, r_min=2.0, r_max=35.0, z_min=-2.0, z_max=2.5, max_abs_y=10.0, min_x=0.0)
+        ],
+        "front_midrange": lambda pts: pts[
+            front_mask(pts, r_min=3.0, r_max=25.0, z_min=-2.0, z_max=2.5, max_abs_y=15.0, min_x=0.0)
+        ],
+        "front_above_ground": lambda pts: pts[
+            front_mask(pts, r_min=2.0, r_max=35.0, z_min=-1.0, z_max=2.5, max_abs_y=15.0, min_x=0.0)
+        ],
+        "front_compact": lambda pts: pts[
+            front_mask(pts, r_min=3.0, r_max=25.0, z_min=-1.0, z_max=2.5, max_abs_y=12.0, min_x=0.0)
+        ],
+    }
+
+
+def prepare_pcd(points: np.ndarray, voxel_size: float) -> o3d.geometry.PointCloud:
+    pcd = o3d.geometry.PointCloud()
+    pcd.points = o3d.utility.Vector3dVector(points)
+    pcd = pcd.voxel_down_sample(voxel_size=voxel_size)
+    if len(pcd.points) > 50:
+        pcd.estimate_normals(
+            search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=voxel_size * 4.0, max_nn=30)
+        )
+    return pcd
+
+
+def preprocess_fpfh(points: np.ndarray, voxel_size: float):
+    pcd = prepare_pcd(points, voxel_size=voxel_size)
+    fpfh = o3d.pipelines.registration.compute_fpfh_feature(
+        pcd,
+        o3d.geometry.KDTreeSearchParamHybrid(radius=voxel_size * 5.0, max_nn=100),
+    )
+    return pcd, fpfh
+
+
+def register_global_then_icp(source_points: np.ndarray, target_points: np.ndarray):
+    coarse_voxel = 1.0
+    fine_voxel = 0.5
+    source_down, source_fpfh = preprocess_fpfh(source_points, coarse_voxel)
+    target_down, target_fpfh = preprocess_fpfh(target_points, coarse_voxel)
+
+    if len(source_down.points) < 50 or len(target_down.points) < 50:
+        return None, None
+
+    global_result = o3d.pipelines.registration.registration_ransac_based_on_feature_matching(
+        source_down,
+        target_down,
+        source_fpfh,
+        target_fpfh,
+        mutual_filter=True,
+        max_correspondence_distance=2.0,
+        estimation_method=o3d.pipelines.registration.TransformationEstimationPointToPoint(False),
+        ransac_n=4,
+        checkers=[
+            o3d.pipelines.registration.CorrespondenceCheckerBasedOnEdgeLength(0.9),
+            o3d.pipelines.registration.CorrespondenceCheckerBasedOnDistance(2.0),
+        ],
+        criteria=o3d.pipelines.registration.RANSACConvergenceCriteria(50000, 500),
+    )
+
+    source_fine = prepare_pcd(source_points, fine_voxel)
+    target_fine = prepare_pcd(target_points, fine_voxel)
+    if len(source_fine.points) < 50 or len(target_fine.points) < 50:
+        return global_result, None
+
+    icp_result = o3d.pipelines.registration.registration_icp(
+        source_fine,
+        target_fine,
+        1.5,
+        global_result.transformation,
+        o3d.pipelines.registration.TransformationEstimationPointToPlane(),
+        o3d.pipelines.registration.ICPConvergenceCriteria(max_iteration=100),
+    )
+    return global_result, icp_result
+
+
+def result_metrics(result, gt_rel):
+    if result is None:
+        return None
+    err = transform_error(result.transformation, gt_rel)
+    return {
+        "fitness": float(result.fitness),
+        "rmse": float(result.inlier_rmse),
+        "est_translation_m": translation_norm(result.transformation),
+        "est_rotation_deg": rotation_angle_deg(result.transformation),
+        "translation_error_m": err["translation_error_m"],
+        "rotation_error_deg": err["rotation_error_deg"],
+    }
+
+
+def aggregate_metrics(valid: List[Dict[str, float]]) -> Dict[str, float]:
+    return {
+        "translation_error_mean_m": float(np.mean([m["translation_error_m"] for m in valid])),
+        "rotation_error_mean_deg": float(np.mean([m["rotation_error_deg"] for m in valid])),
+        "fitness_mean": float(np.mean([m["fitness"] for m in valid])),
+        "rmse_mean": float(np.mean([m["rmse"] for m in valid])),
+        "num_valid_pairs": int(len(valid)),
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--run-summary", type=Path, required=True)
+    parser.add_argument("--dataroot", type=Path, default=Path("/home/clara/datasets/nuscenes"))
+    parser.add_argument("--version", type=str, default="v1.0-mini")
+    args = parser.parse_args()
+
+    run_summary = json.loads(args.run_summary.read_text())
+    nusc = NuScenes(version=args.version, dataroot=str(args.dataroot), verbose=False)
+    samples = sorted(run_summary["samples"], key=lambda x: x["index"])
+    strategies = get_selection_strategies()
+
+    pair_results = []
+    for i in range(len(samples) - 1):
+        src_meta = samples[i]
+        tgt_meta = samples[i + 1]
+        src_points_all = load_points(Path(src_meta["pseudo_path"]))
+        tgt_points_all = load_points(Path(tgt_meta["pseudo_path"]))
+
+        src_pose = pose_global_from_sample(nusc, src_meta["sample_token"])
+        tgt_pose = pose_global_from_sample(nusc, tgt_meta["sample_token"])
+        gt_rel = relative_transform(src_pose, tgt_pose)
+
+        pair_info = {
+            "pair_index": i,
+            "source_token": src_meta["sample_token"],
+            "target_token": tgt_meta["sample_token"],
+            "dt_s": float(tgt_meta["timestamp_s"] - src_meta["timestamp_s"]),
+            "strategies": {},
+        }
+
+        for name, selector in strategies.items():
+            src_points = selector(src_points_all)
+            tgt_points = selector(tgt_points_all)
+            global_result, icp_result = register_global_then_icp(src_points, tgt_points)
+            pair_info["strategies"][name] = {
+                "num_source_points": int(src_points.shape[0]),
+                "num_target_points": int(tgt_points.shape[0]),
+                "global_fitness": None if global_result is None else float(global_result.fitness),
+                "global_rmse": None if global_result is None else float(global_result.inlier_rmse),
+                "metrics": result_metrics(icp_result, gt_rel),
+            }
+
+        pair_results.append(pair_info)
+
+    aggregate = {}
+    for name in strategies:
+        valid = [
+            p["strategies"][name]["metrics"]
+            for p in pair_results
+            if p["strategies"][name]["metrics"] is not None
+        ]
+        aggregate[name] = None if not valid else aggregate_metrics(valid)
+
+    output = {
+        "scene_name": run_summary["scene_name"],
+        "num_pairs": len(pair_results),
+        "pairs": pair_results,
+        "aggregate": aggregate,
+    }
+
+    out_path = args.run_summary.parent / "front_point_selection_comparison.json"
+    out_path.write_text(json.dumps(output, indent=2))
+    print(out_path)
+    print(json.dumps(output["aggregate"], indent=2))
+
+
+if __name__ == "__main__":
+    main()
