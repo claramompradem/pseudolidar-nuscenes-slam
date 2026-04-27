@@ -1,0 +1,1748 @@
+{
+  "scene_name": "scene-0061",
+  "num_pairs": 4,
+  "configs": [
+    {
+      "name": "cfg_00",
+      "coarse_voxel": 0.8,
+      "global_corr": 1.6,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 2.017413157024595,
+        "rotation_error_mean_deg": 1.8114165844628576,
+        "fitness_mean": 0.6684182775804095,
+        "rmse_mean": 0.45539557700461,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.8117647058823529,
+          "global_rmse": 0.8103607811010186,
+          "metrics": {
+            "fitness": 0.7255,
+            "rmse": 0.47880514170398136,
+            "translation_error_m": 4.090337158347669,
+            "rotation_error_deg": 2.155548894426505
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6449612403100775,
+          "global_rmse": 0.8174240781667176,
+          "metrics": {
+            "fitness": 0.6013150029886432,
+            "rmse": 0.43375496367166116,
+            "translation_error_m": 0.7224903679307694,
+            "rotation_error_deg": 2.3058988621024943
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.8028169014084507,
+          "global_rmse": 0.6751464930997857,
+          "metrics": {
+            "fitness": 0.6108213820078227,
+            "rmse": 0.44467054065045375,
+            "translation_error_m": 1.461638670002642,
+            "rotation_error_deg": 1.5746710472447307
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9109090909090909,
+          "global_rmse": 0.7734742469104834,
+          "metrics": {
+            "fitness": 0.7360367253251722,
+            "rmse": 0.46435166199234373,
+            "translation_error_m": 1.7951864318172996,
+            "rotation_error_deg": 1.2095475340777004
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_01",
+      "coarse_voxel": 0.8,
+      "global_corr": 1.6,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.18191678946154,
+        "rotation_error_mean_deg": 1.609114544484098,
+        "fitness_mean": 0.7479284188615953,
+        "rmse_mean": 0.6190684805664982,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.6666666666666666,
+          "global_rmse": 0.7588074100502921,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6481790787502271,
+            "translation_error_m": 1.0624144683007013,
+            "rotation_error_deg": 0.9658839412745018
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6449612403100775,
+          "global_rmse": 0.7881186541016276,
+          "metrics": {
+            "fitness": 0.657501494321578,
+            "rmse": 0.6069472216895795,
+            "translation_error_m": 0.5013325643418078,
+            "rotation_error_deg": 2.2424643993448656
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.801056338028169,
+          "global_rmse": 0.6963836390183407,
+          "metrics": {
+            "fitness": 0.6975228161668839,
+            "rmse": 0.5927910551590628,
+            "translation_error_m": 1.4118269328191957,
+            "rotation_error_deg": 1.9803600904191023
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8745454545454545,
+          "global_rmse": 0.7918894442905849,
+          "metrics": {
+            "fitness": 0.8576893649579189,
+            "rmse": 0.6283565666671235,
+            "translation_error_m": 1.7520931923844554,
+            "rotation_error_deg": 1.2477497468979217
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_02",
+      "coarse_voxel": 0.8,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 1.8052123247795628,
+        "rotation_error_mean_deg": 1.6671586717915137,
+        "fitness_mean": 0.676233978731398,
+        "rmse_mean": 0.4774200752357155,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.6679738562091503,
+          "global_rmse": 0.7788941959649174,
+          "metrics": {
+            "fitness": 0.6695594125500668,
+            "rmse": 0.48332113898924717,
+            "translation_error_m": 1.2693245775409046,
+            "rotation_error_deg": 1.0743517411165644
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.7255813953488373,
+          "global_rmse": 0.8376016066647106,
+          "metrics": {
+            "fitness": 0.5904463586530931,
+            "rmse": 0.45034162184987997,
+            "translation_error_m": 0.7610787711746924,
+            "rotation_error_deg": 2.3878073880298682
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.7940140845070423,
+          "global_rmse": 0.7166899143946653,
+          "metrics": {
+            "fitness": 0.7117346938775511,
+            "rmse": 0.4776159873306296,
+            "translation_error_m": 3.240935836304002,
+            "rotation_error_deg": 2.0516383736140726
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9145454545454546,
+          "global_rmse": 0.7658604671981104,
+          "metrics": {
+            "fitness": 0.733195449844881,
+            "rmse": 0.4984015527731053,
+            "translation_error_m": 1.9495101140986524,
+            "rotation_error_deg": 1.1548371844055487
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_03",
+      "coarse_voxel": 0.8,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.3018986481540542,
+        "rotation_error_mean_deg": 1.7996875405891553,
+        "fitness_mean": 0.74771056477801,
+        "rmse_mean": 0.6373918165139167,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7111111111111111,
+          "global_rmse": 0.7673883633959572,
+          "metrics": {
+            "fitness": 0.7837116154873164,
+            "rmse": 0.6489443853232786,
+            "translation_error_m": 1.2744220199660732,
+            "rotation_error_deg": 1.2412802036952866
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.7255813953488373,
+          "global_rmse": 0.8376016066647106,
+          "metrics": {
+            "fitness": 0.6515270164447925,
+            "rmse": 0.6168644659191735,
+            "translation_error_m": 0.614648094065832,
+            "rotation_error_deg": 2.85445796976693
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.7992957746478874,
+          "global_rmse": 0.6972320657443839,
+          "metrics": {
+            "fitness": 0.6972789115646258,
+            "rmse": 0.6218314595042004,
+            "translation_error_m": 1.6159692252688402,
+            "rotation_error_deg": 1.923986718931368
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8854545454545455,
+          "global_rmse": 0.7791463490051312,
+          "metrics": {
+            "fitness": 0.8583247156153051,
+            "rmse": 0.6619269553090144,
+            "translation_error_m": 1.7025552533154718,
+            "rotation_error_deg": 1.1790252699630375
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_04",
+      "coarse_voxel": 0.8,
+      "global_corr": 2.0,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 1.3746243438674868,
+        "rotation_error_mean_deg": 1.5475527466974512,
+        "fitness_mean": 0.6602932775804096,
+        "rmse_mean": 0.45996356313446274,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.6679738562091503,
+          "global_rmse": 0.9365208852064741,
+          "metrics": {
+            "fitness": 0.693,
+            "rmse": 0.4940225602461954,
+            "translation_error_m": 1.5616760676151242,
+            "rotation_error_deg": 1.1493309823465752
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6868217054263566,
+          "global_rmse": 0.9431462886232741,
+          "metrics": {
+            "fitness": 0.6013150029886432,
+            "rmse": 0.4368094893552189,
+            "translation_error_m": 0.6799962061744877,
+            "rotation_error_deg": 2.2566613983647015
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.8362676056338029,
+          "global_rmse": 0.7580221897568574,
+          "metrics": {
+            "fitness": 0.6108213820078227,
+            "rmse": 0.44467054065045386,
+            "translation_error_m": 1.461638670002635,
+            "rotation_error_deg": 1.5746710472428789
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9436363636363636,
+          "global_rmse": 0.9382877858454746,
+          "metrics": {
+            "fitness": 0.7360367253251722,
+            "rmse": 0.4643516622859827,
+            "translation_error_m": 1.7951864316777004,
+            "rotation_error_deg": 1.2095475588356495
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_05",
+      "coarse_voxel": 0.8,
+      "global_corr": 2.0,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.1751275846274636,
+        "rotation_error_mean_deg": 1.6067542629559697,
+        "fitness_mean": 0.7477371411263236,
+        "rmse_mean": 0.6198639895035415,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.6915032679738562,
+          "global_rmse": 1.0381806181364301,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6482069592491037,
+            "translation_error_m": 1.0625469519125454,
+            "rotation_error_deg": 0.9670313919386353
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.703875968992248,
+          "global_rmse": 0.8921087990601207,
+          "metrics": {
+            "fitness": 0.657501494321578,
+            "rmse": 0.60696647904861,
+            "translation_error_m": 0.5023779607641056,
+            "rotation_error_deg": 2.2454496977169542
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.8345070422535211,
+          "global_rmse": 0.7485865628829163,
+          "metrics": {
+            "fitness": 0.6975228161668839,
+            "rmse": 0.5927910547517714,
+            "translation_error_m": 1.411826930773739,
+            "rotation_error_deg": 1.9803601005613365
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.96,
+          "global_rmse": 0.8603767035136102,
+          "metrics": {
+            "fitness": 0.8569242540168325,
+            "rmse": 0.6314914649646807,
+            "translation_error_m": 1.7237584950594642,
+            "rotation_error_deg": 1.2341758616069525
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_06",
+      "coarse_voxel": 0.8,
+      "global_corr": 2.0,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 1.8052123251246863,
+        "rotation_error_mean_deg": 1.6671586729487677,
+        "fitness_mean": 0.676233978731398,
+        "rmse_mean": 0.4774200750884991,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7372549019607844,
+          "global_rmse": 0.9034397410913472,
+          "metrics": {
+            "fitness": 0.6695594125500668,
+            "rmse": 0.4833211389893484,
+            "translation_error_m": 1.26932457754191,
+            "rotation_error_deg": 1.0743517411240282
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6852713178294574,
+          "global_rmse": 1.0529187676068752,
+          "metrics": {
+            "fitness": 0.5904463586530931,
+            "rmse": 0.45034162184988075,
+            "translation_error_m": 0.7610787711746858,
+            "rotation_error_deg": 2.3878073880307844
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.8362676056338029,
+          "global_rmse": 0.7527239595455235,
+          "metrics": {
+            "fitness": 0.7117346938775511,
+            "rmse": 0.4776159868094674,
+            "translation_error_m": 3.240935837558525,
+            "rotation_error_deg": 2.0516383541882734
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9563636363636364,
+          "global_rmse": 0.906494939725671,
+          "metrics": {
+            "fitness": 0.733195449844881,
+            "rmse": 0.49840155270529984,
+            "translation_error_m": 1.9495101142236249,
+            "rotation_error_deg": 1.1548372084519842
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_07",
+      "coarse_voxel": 0.8,
+      "global_corr": 2.0,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.3266022217985456,
+        "rotation_error_mean_deg": 1.7847379927913907,
+        "fitness_mean": 0.7488035422467618,
+        "rmse_mean": 0.636895501808175,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.8431372549019608,
+          "global_rmse": 0.918935054058297,
+          "metrics": {
+            "fitness": 0.7870493991989319,
+            "rmse": 0.6486127080086622,
+            "translation_error_m": 1.3393463097042622,
+            "rotation_error_deg": 1.1821351084820222
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.7395348837209302,
+          "global_rmse": 1.0905476400261258,
+          "metrics": {
+            "fitness": 0.6515270164447925,
+            "rmse": 0.6168644658974736,
+            "translation_error_m": 0.6146480938954745,
+            "rotation_error_deg": 2.854457971368477
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.8345070422535211,
+          "global_rmse": 0.7761508449735717,
+          "metrics": {
+            "fitness": 0.6972789115646258,
+            "rmse": 0.6218314595042,
+            "translation_error_m": 1.6159692252688431,
+            "rotation_error_deg": 1.9239867189321262
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9236363636363636,
+          "global_rmse": 0.9261846557776309,
+          "metrics": {
+            "fitness": 0.859358841778697,
+            "rmse": 0.6602733738223643,
+            "translation_error_m": 1.736445258325602,
+            "rotation_error_deg": 1.1783721723829363
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_08",
+      "coarse_voxel": 1.0,
+      "global_corr": 1.6,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 9.315980192962732,
+        "rotation_error_mean_deg": 46.026033505640235,
+        "fitness_mean": 0.6239233022610688,
+        "rmse_mean": 0.4999049886259501,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7260034904013961,
+          "global_rmse": 0.8816595445383963,
+          "metrics": {
+            "fitness": 0.693,
+            "rmse": 0.49402256011557993,
+            "translation_error_m": 1.5616760653695108,
+            "rotation_error_deg": 1.1493309997742245
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.5480349344978166,
+          "global_rmse": 0.9144572532211634,
+          "metrics": {
+            "fitness": 0.602510460251046,
+            "rmse": 0.4361299598332378,
+            "translation_error_m": 0.700134985729555,
+            "rotation_error_deg": 2.2494653507895284
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.5165876777251185,
+          "global_rmse": 0.8907221927064662,
+          "metrics": {
+            "fitness": 0.4641460234680574,
+            "rmse": 0.6051157723530701,
+            "translation_error_m": 33.206923289033824,
+            "rotation_error_deg": 179.49579012016542
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8100961538461539,
+          "global_rmse": 0.958854653230611,
+          "metrics": {
+            "fitness": 0.7360367253251722,
+            "rmse": 0.4643516622019127,
+            "translation_error_m": 1.7951864317180395,
+            "rotation_error_deg": 1.209547551831776
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_09",
+      "coarse_voxel": 1.0,
+      "global_corr": 1.6,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.92387130371694,
+        "rotation_error_mean_deg": 3.0382114515966467,
+        "fitness_mean": 0.7814952683264054,
+        "rmse_mean": 0.6362550993239431,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7417102966841187,
+          "global_rmse": 0.812606158637252,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6481790787502245,
+            "translation_error_m": 1.0624144683007126,
+            "rotation_error_deg": 0.9658839412760113
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6375545851528385,
+          "global_rmse": 0.9437551270107172,
+          "metrics": {
+            "fitness": 0.7931858936043037,
+            "rmse": 0.6745393844387558,
+            "translation_error_m": 3.501300979926065,
+            "rotation_error_deg": 7.96157787790912
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.580568720379147,
+          "global_rmse": 0.7834535166632526,
+          "metrics": {
+            "fitness": 0.696870925684485,
+            "rmse": 0.5908104691421142,
+            "translation_error_m": 1.4080112715814934,
+            "rotation_error_deg": 1.9912081255903682
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.7740384615384616,
+          "global_rmse": 0.8317348300016313,
+          "metrics": {
+            "fitness": 0.8569242540168325,
+            "rmse": 0.6314914649646781,
+            "translation_error_m": 1.7237584950594889,
+            "rotation_error_deg": 1.2341758616110872
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_10",
+      "coarse_voxel": 1.0,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 1.8145520725671949,
+        "rotation_error_mean_deg": 1.6576574112657525,
+        "fitness_mean": 0.6766591487994252,
+        "rmse_mean": 0.4769732914613126,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7399650959860384,
+          "global_rmse": 0.7889868884822054,
+          "metrics": {
+            "fitness": 0.6695594125500668,
+            "rmse": 0.48332113898934886,
+            "translation_error_m": 1.2693245775419153,
+            "rotation_error_deg": 1.0743517411226713
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.5480349344978166,
+          "global_rmse": 0.9602259152836415,
+          "metrics": {
+            "fitness": 0.5904463586530931,
+            "rmse": 0.4503416218498806,
+            "translation_error_m": 0.7610787711746932,
+            "rotation_error_deg": 2.387807388030174
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.6563981042654028,
+          "global_rmse": 0.8487976879019955,
+          "metrics": {
+            "fitness": 0.7134353741496599,
+            "rmse": 0.47582885230072103,
+            "translation_error_m": 3.278294827328547,
+            "rotation_error_deg": 2.013633307456919
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8293269230769231,
+          "global_rmse": 0.8915804235733356,
+          "metrics": {
+            "fitness": 0.733195449844881,
+            "rmse": 0.4984015527053001,
+            "translation_error_m": 1.9495101142236249,
+            "rotation_error_deg": 1.1548372084532468
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_11",
+      "coarse_voxel": 1.0,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.3102485577678267,
+        "rotation_error_mean_deg": 1.799723807762982,
+        "fitness_mean": 0.7479690963188579,
+        "rmse_mean": 0.6369966452594658,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.743455497382199,
+          "global_rmse": 0.773790877310409,
+          "metrics": {
+            "fitness": 0.7837116154873164,
+            "rmse": 0.6489012162228809,
+            "translation_error_m": 1.2743224844554335,
+            "rotation_error_deg": 1.2401435490046815
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6375545851528385,
+          "global_rmse": 0.8626088623217784,
+          "metrics": {
+            "fitness": 0.6515270164447925,
+            "rmse": 0.6168644659248546,
+            "translation_error_m": 0.6146480924521915,
+            "rotation_error_deg": 2.8544579663093863
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.6824644549763034,
+          "global_rmse": 0.8740698755665969,
+          "metrics": {
+            "fitness": 0.6972789115646258,
+            "rmse": 0.6218314626892656,
+            "translation_error_m": 1.6159692273118236,
+            "rotation_error_deg": 1.9239867164402475
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8365384615384616,
+          "global_rmse": 0.8523677252334925,
+          "metrics": {
+            "fitness": 0.859358841778697,
+            "rmse": 0.6603894362008619,
+            "translation_error_m": 1.7360544268518583,
+            "rotation_error_deg": 1.180306999297612
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_12",
+      "coarse_voxel": 1.0,
+      "global_corr": 2.0,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 9.044301290871648,
+        "rotation_error_mean_deg": 45.715207398280185,
+        "fitness_mean": 0.6251975539221218,
+        "rmse_mean": 0.5003521414833016,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7783595113438045,
+          "global_rmse": 0.8597888210173533,
+          "metrics": {
+            "fitness": 0.693,
+            "rmse": 0.49402256024618724,
+            "translation_error_m": 1.5616760676150365,
+            "rotation_error_deg": 1.1493309823472095
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6397379912663755,
+          "global_rmse": 0.9794981488710219,
+          "metrics": {
+            "fitness": 0.6013150029886432,
+            "rmse": 0.4337549637418156,
+            "translation_error_m": 0.7224903743291599,
+            "rotation_error_deg": 2.3058988861232934
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.6516587677725119,
+          "global_rmse": 1.2094283670089525,
+          "metrics": {
+            "fitness": 0.47196870925684486,
+            "rmse": 0.6098883221612732,
+            "translation_error_m": 32.13335842061206,
+            "rotation_error_deg": 178.27517282552188
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9375,
+          "global_rmse": 0.9376481925063579,
+          "metrics": {
+            "fitness": 0.7345065034429993,
+            "rmse": 0.4637427197839305,
+            "translation_error_m": 1.759680300930331,
+            "rotation_error_deg": 1.1304268991283624
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_13",
+      "coarse_voxel": 1.0,
+      "global_corr": 2.0,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 8.906584080456955,
+        "rotation_error_mean_deg": 45.535503799832995,
+        "fitness_mean": 0.7345646639724166,
+        "rmse_mean": 0.6797713889186502,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7958115183246073,
+          "global_rmse": 0.919331275328265,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6482069592491023,
+            "translation_error_m": 1.0625469519125461,
+            "rotation_error_deg": 0.9670313919401429
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6331877729257642,
+          "global_rmse": 0.976935381688763,
+          "metrics": {
+            "fitness": 0.657501494321578,
+            "rmse": 0.6100410362583811,
+            "translation_error_m": 0.48643045999184503,
+            "rotation_error_deg": 2.198775510527798
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.6824644549763034,
+          "global_rmse": 1.185126412338004,
+          "metrics": {
+            "fitness": 0.6440677966101694,
+            "rmse": 0.8325042742534772,
+            "translation_error_m": 32.325604192487,
+            "rotation_error_deg": 177.73020443974372
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9158653846153846,
+          "global_rmse": 0.9538799093543018,
+          "metrics": {
+            "fitness": 0.8576893649579189,
+            "rmse": 0.6283332859136402,
+            "translation_error_m": 1.751754717436431,
+            "rotation_error_deg": 1.2460038571203185
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_14",
+      "coarse_voxel": 1.0,
+      "global_corr": 2.0,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 1.3662248389409444,
+        "rotation_error_mean_deg": 1.627749975838803,
+        "fitness_mean": 0.6463965764807781,
+        "rmse_mean": 0.474137900606726,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7783595113438045,
+          "global_rmse": 0.8597888210173539,
+          "metrics": {
+            "fitness": 0.6675567423230975,
+            "rmse": 0.4808695590964815,
+            "translation_error_m": 1.2546207614085836,
+            "rotation_error_deg": 1.0784087583756632
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6746724890829694,
+          "global_rmse": 1.126837901719034,
+          "metrics": {
+            "fitness": 0.5904463586530931,
+            "rmse": 0.45028633528249756,
+            "translation_error_m": 0.7625175131908083,
+            "rotation_error_deg": 2.388298291563119
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.7464454976303317,
+          "global_rmse": 0.9726389527678787,
+          "metrics": {
+            "fitness": 0.5943877551020408,
+            "rmse": 0.4669941553426252,
+            "translation_error_m": 1.498250966940762,
+            "rotation_error_deg": 1.889455644964446
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9375,
+          "global_rmse": 0.9927187775028018,
+          "metrics": {
+            "fitness": 0.733195449844881,
+            "rmse": 0.49840155270529984,
+            "translation_error_m": 1.9495101142236237,
+            "rotation_error_deg": 1.1548372084519842
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_15",
+      "coarse_voxel": 1.0,
+      "global_corr": 2.0,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 6.664193793148582,
+        "rotation_error_mean_deg": 44.23576802017186,
+        "fitness_mean": 0.7067275997202185,
+        "rmse_mean": 0.6893412907970646,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7713787085514834,
+          "global_rmse": 0.8245266108526029,
+          "metrics": {
+            "fitness": 0.7837116154873164,
+            "rmse": 0.6489012162228787,
+            "translation_error_m": 1.2743224844554477,
+            "rotation_error_deg": 1.2401435490064452
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.8231441048034934,
+          "global_rmse": 0.9016265506954456,
+          "metrics": {
+            "fitness": 0.6515270164447925,
+            "rmse": 0.6168644663027182,
+            "translation_error_m": 0.6146481199203329,
+            "rotation_error_deg": 2.8544580707903564
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.590047393364929,
+          "global_rmse": 1.0515408918059426,
+          "metrics": {
+            "fitness": 0.532312925170068,
+            "rmse": 0.8313261068402983,
+            "translation_error_m": 23.03135930989293,
+            "rotation_error_deg": 171.67009828850647
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8966346153846154,
+          "global_rmse": 0.9358900956521259,
+          "metrics": {
+            "fitness": 0.859358841778697,
+            "rmse": 0.6602733738223635,
+            "translation_error_m": 1.7364452583256165,
+            "rotation_error_deg": 1.1783721723841736
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_16",
+      "coarse_voxel": 1.2,
+      "global_corr": 1.6,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 6.65460240233621,
+        "rotation_error_mean_deg": 45.54092811109696,
+        "fitness_mean": 0.611139839004235,
+        "rmse_mean": 0.5018112666768326,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7523148148148148,
+          "global_rmse": 0.9531070370606504,
+          "metrics": {
+            "fitness": 0.693,
+            "rmse": 0.4940225600072732,
+            "translation_error_m": 1.5616760657539526,
+            "rotation_error_deg": 1.1493309778889735
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.5571030640668524,
+          "global_rmse": 0.8214204010199155,
+          "metrics": {
+            "fitness": 0.5481171548117155,
+            "rmse": 0.4472951104735132,
+            "translation_error_m": 0.7173373006911161,
+            "rotation_error_deg": 1.9808044853175535
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.5087719298245614,
+          "global_rmse": 0.9720044425756474,
+          "metrics": {
+            "fitness": 0.46740547588005216,
+            "rmse": 0.6015757342813147,
+            "translation_error_m": 22.544209811068097,
+            "rotation_error_deg": 177.82402945321067
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8362068965517241,
+          "global_rmse": 0.9303206118773282,
+          "metrics": {
+            "fitness": 0.7360367253251722,
+            "rmse": 0.4643516619452295,
+            "translation_error_m": 1.7951864318316768,
+            "rotation_error_deg": 1.2095475279706311
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_17",
+      "coarse_voxel": 1.2,
+      "global_corr": 1.6,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.9253164812713632,
+        "rotation_error_mean_deg": 3.034400868501385,
+        "fitness_mean": 0.7815088087892046,
+        "rmse_mean": 0.6363875764814624,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.75,
+          "global_rmse": 0.806491991563094,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6481790760851669,
+            "translation_error_m": 1.0624143596839184,
+            "rotation_error_deg": 0.965882692813659
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.596100278551532,
+          "global_rmse": 0.9515457286404944,
+          "metrics": {
+            "fitness": 0.7925881649731022,
+            "rmse": 0.6731455873645735,
+            "translation_error_m": 3.5019492899531497,
+            "rotation_error_deg": 7.952279222990992
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.5526315789473685,
+          "global_rmse": 0.993389795019338,
+          "metrics": {
+            "fitness": 0.6975228161668839,
+            "rmse": 0.592791054751794,
+            "translation_error_m": 1.4118269307700484,
+            "rotation_error_deg": 1.9803601005992564
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.7988505747126436,
+          "global_rmse": 0.7948852560722381,
+          "metrics": {
+            "fitness": 0.8569242540168325,
+            "rmse": 0.6314345877243152,
+            "translation_error_m": 1.7250753446783371,
+            "rotation_error_deg": 1.2390814576016322
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_18",
+      "coarse_voxel": 1.2,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 12.3857498788666,
+        "rotation_error_mean_deg": 37.69340446670654,
+        "fitness_mean": 0.5621060247299583,
+        "rmse_mean": 0.5450551673536465,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7731481481481481,
+          "global_rmse": 0.8559983702200433,
+          "metrics": {
+            "fitness": 0.664886515353805,
+            "rmse": 0.49279987945256726,
+            "translation_error_m": 2.761120582353245,
+            "rotation_error_deg": 1.5413065880962973
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.48746518105849584,
+          "global_rmse": 0.9296739639351719,
+          "metrics": {
+            "fitness": 0.4158183241973375,
+            "rmse": 0.5797438100289016,
+            "translation_error_m": 24.65574953304101,
+            "rotation_error_deg": 99.03413752175639
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.4590643274853801,
+          "global_rmse": 0.879666298907175,
+          "metrics": {
+            "fitness": 0.43452380952380953,
+            "rmse": 0.6092754271613643,
+            "translation_error_m": 20.176619285994853,
+            "rotation_error_deg": 49.04333657218981
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8275862068965517,
+          "global_rmse": 0.9309299810711488,
+          "metrics": {
+            "fitness": 0.733195449844881,
+            "rmse": 0.49840155277175285,
+            "translation_error_m": 1.9495101140772935,
+            "rotation_error_deg": 1.154837184783661
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_19",
+      "coarse_voxel": 1.2,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 6.804788924524562,
+        "rotation_error_mean_deg": 89.51963427616244,
+        "fitness_mean": 0.6479272038162791,
+        "rmse_mean": 0.718285003705892,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7870370370370371,
+          "global_rmse": 0.7856177639772922,
+          "metrics": {
+            "fitness": 0.7910547396528705,
+            "rmse": 0.6514931941619673,
+            "translation_error_m": 1.3512498207557073,
+            "rotation_error_deg": 1.088463136829638
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.4818941504178273,
+          "global_rmse": 0.9595871063851945,
+          "metrics": {
+            "fitness": 0.485512920908379,
+            "rmse": 0.7561019486580524,
+            "translation_error_m": 1.114434663952951,
+            "rotation_error_deg": 177.6830171438012
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.4619883040935672,
+          "global_rmse": 0.9852982708049699,
+          "metrics": {
+            "fitness": 0.4557823129251701,
+            "rmse": 0.8052714981811833,
+            "translation_error_m": 23.01702595506399,
+            "rotation_error_deg": 178.12868465163413
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8247126436781609,
+          "global_rmse": 0.9515887823811697,
+          "metrics": {
+            "fitness": 0.859358841778697,
+            "rmse": 0.6602733738223652,
+            "translation_error_m": 1.7364452583256027,
+            "rotation_error_deg": 1.1783721723847924
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_20",
+      "coarse_voxel": 1.2,
+      "global_corr": 2.0,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 7.702141617241505,
+        "rotation_error_mean_deg": 24.22460101903958,
+        "fitness_mean": 0.6058010789326633,
+        "rmse_mean": 0.5143122496501683,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.8194444444444444,
+          "global_rmse": 1.012394195470277,
+          "metrics": {
+            "fitness": 0.6925,
+            "rmse": 0.4936482490153497,
+            "translation_error_m": 1.5636839178472064,
+            "rotation_error_deg": 1.1431135990768853
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.5988857938718662,
+          "global_rmse": 1.2095557150065268,
+          "metrics": {
+            "fitness": 0.3682008368200837,
+            "rmse": 0.631776026827053,
+            "translation_error_m": 25.60822656577745,
+            "rotation_error_deg": 88.13726637717704
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.7192982456140351,
+          "global_rmse": 1.126469958757491,
+          "metrics": {
+            "fitness": 0.6264667535853976,
+            "rmse": 0.4674730606139707,
+            "translation_error_m": 1.8414695534343792,
+            "rotation_error_deg": 6.408476553012263
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9540229885057471,
+          "global_rmse": 0.904849042339509,
+          "metrics": {
+            "fitness": 0.7360367253251722,
+            "rmse": 0.46435166214429974,
+            "translation_error_m": 1.7951864319069852,
+            "rotation_error_deg": 1.2095475468921195
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_21",
+      "coarse_voxel": 1.2,
+      "global_corr": 2.0,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.3512739559256601,
+        "rotation_error_mean_deg": 45.50179471225787,
+        "fitness_mean": 0.700843748691683,
+        "rmse_mean": 0.6556883531147639,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.8379629629629629,
+          "global_rmse": 1.0165230206580966,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6481790787502253,
+            "translation_error_m": 1.0624144683007086,
+            "rotation_error_deg": 0.9658839412760113
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6239554317548747,
+          "global_rmse": 1.151125140488139,
+          "metrics": {
+            "fitness": 0.4698147041243276,
+            "rmse": 0.7554072978995897,
+            "translation_error_m": 1.1825768914359975,
+            "rotation_error_deg": 177.80233703527026
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.5789473684210527,
+          "global_rmse": 1.183918368116517,
+          "metrics": {
+            "fitness": 0.696870925684485,
+            "rmse": 0.5908104691421154,
+            "translation_error_m": 1.4080112715814872,
+            "rotation_error_deg": 1.991208125589636
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9166666666666666,
+          "global_rmse": 1.0995601476858627,
+          "metrics": {
+            "fitness": 0.8576893649579189,
+            "rmse": 0.6283565666671251,
+            "translation_error_m": 1.7520931923844474,
+            "rotation_error_deg": 1.247749746895585
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_22",
+      "coarse_voxel": 1.2,
+      "global_corr": 2.0,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.0,
+      "aggregate": {
+        "translation_error_mean_m": 1.4660512945557902,
+        "rotation_error_mean_deg": 2.731074751194318,
+        "fitness_mean": 0.6509363596837789,
+        "rmse_mean": 0.48235085989349463,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.8055555555555556,
+          "global_rmse": 0.9257950189071755,
+          "metrics": {
+            "fitness": 0.6695594125500668,
+            "rmse": 0.48333691940167695,
+            "translation_error_m": 1.2690282295469628,
+            "rotation_error_deg": 1.0770288998699311
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.754874651810585,
+          "global_rmse": 1.0944187102875218,
+          "metrics": {
+            "fitness": 0.5904463586530931,
+            "rmse": 0.4503416218498811,
+            "translation_error_m": 0.7610787711746944,
+            "rotation_error_deg": 2.3878073880307844
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.7543859649122807,
+          "global_rmse": 1.0409864126912194,
+          "metrics": {
+            "fitness": 0.6105442176870748,
+            "rmse": 0.49732334555073593,
+            "translation_error_m": 1.8845880634250385,
+            "rotation_error_deg": 6.304625532073957
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9511494252873564,
+          "global_rmse": 0.9478471414585015,
+          "metrics": {
+            "fitness": 0.733195449844881,
+            "rmse": 0.4984015527716846,
+            "translation_error_m": 1.9495101140764655,
+            "rotation_error_deg": 1.1548371848025982
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_23",
+      "coarse_voxel": 1.2,
+      "global_corr": 2.0,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 7.621209957461424,
+        "rotation_error_mean_deg": 25.644764261329165,
+        "fitness_mean": 0.7302823385640651,
+        "rmse_mean": 0.6891599713047154,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.8217592592592593,
+          "global_rmse": 1.0472216182407612,
+          "metrics": {
+            "fitness": 0.7843791722296395,
+            "rmse": 0.6486610956160404,
+            "translation_error_m": 1.28713838145735,
+            "rotation_error_deg": 1.2170203469977692
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6044568245125348,
+          "global_rmse": 1.1196649384835151,
+          "metrics": {
+            "fitness": 0.562255285826155,
+            "rmse": 0.8136173874238062,
+            "translation_error_m": 25.293155901255805,
+            "rotation_error_deg": 93.54795802111752
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.7280701754385965,
+          "global_rmse": 1.0721410165292633,
+          "metrics": {
+            "fitness": 0.7151360544217688,
+            "rmse": 0.6339719659781544,
+            "translation_error_m": 2.168491120280678,
+            "rotation_error_deg": 6.633771677903137
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9367816091954023,
+          "global_rmse": 0.9844862466683797,
+          "metrics": {
+            "fitness": 0.859358841778697,
+            "rmse": 0.6603894362008609,
+            "translation_error_m": 1.736054426851865,
+            "rotation_error_deg": 1.1803069992982298
+          }
+        }
+      ]
+    }
+  ],
+  "best_by_translation_then_rotation": [
+    {
+      "name": "cfg_05",
+      "coarse_voxel": 0.8,
+      "global_corr": 2.0,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.1751275846274636,
+        "rotation_error_mean_deg": 1.6067542629559697,
+        "fitness_mean": 0.7477371411263236,
+        "rmse_mean": 0.6198639895035415,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.6915032679738562,
+          "global_rmse": 1.0381806181364301,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6482069592491037,
+            "translation_error_m": 1.0625469519125454,
+            "rotation_error_deg": 0.9670313919386353
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.703875968992248,
+          "global_rmse": 0.8921087990601207,
+          "metrics": {
+            "fitness": 0.657501494321578,
+            "rmse": 0.60696647904861,
+            "translation_error_m": 0.5023779607641056,
+            "rotation_error_deg": 2.2454496977169542
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.8345070422535211,
+          "global_rmse": 0.7485865628829163,
+          "metrics": {
+            "fitness": 0.6975228161668839,
+            "rmse": 0.5927910547517714,
+            "translation_error_m": 1.411826930773739,
+            "rotation_error_deg": 1.9803601005613365
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.96,
+          "global_rmse": 0.8603767035136102,
+          "metrics": {
+            "fitness": 0.8569242540168325,
+            "rmse": 0.6314914649646807,
+            "translation_error_m": 1.7237584950594642,
+            "rotation_error_deg": 1.2341758616069525
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_01",
+      "coarse_voxel": 0.8,
+      "global_corr": 1.6,
+      "fine_voxel": 0.4,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.18191678946154,
+        "rotation_error_mean_deg": 1.609114544484098,
+        "fitness_mean": 0.7479284188615953,
+        "rmse_mean": 0.6190684805664982,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.6666666666666666,
+          "global_rmse": 0.7588074100502921,
+          "metrics": {
+            "fitness": 0.779,
+            "rmse": 0.6481790787502271,
+            "translation_error_m": 1.0624144683007013,
+            "rotation_error_deg": 0.9658839412745018
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6449612403100775,
+          "global_rmse": 0.7881186541016276,
+          "metrics": {
+            "fitness": 0.657501494321578,
+            "rmse": 0.6069472216895795,
+            "translation_error_m": 0.5013325643418078,
+            "rotation_error_deg": 2.2424643993448656
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.801056338028169,
+          "global_rmse": 0.6963836390183407,
+          "metrics": {
+            "fitness": 0.6975228161668839,
+            "rmse": 0.5927910551590628,
+            "translation_error_m": 1.4118269328191957,
+            "rotation_error_deg": 1.9803600904191023
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8745454545454545,
+          "global_rmse": 0.7918894442905849,
+          "metrics": {
+            "fitness": 0.8576893649579189,
+            "rmse": 0.6283565666671235,
+            "translation_error_m": 1.7520931923844554,
+            "rotation_error_deg": 1.2477497468979217
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_03",
+      "coarse_voxel": 0.8,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.3018986481540542,
+        "rotation_error_mean_deg": 1.7996875405891553,
+        "fitness_mean": 0.74771056477801,
+        "rmse_mean": 0.6373918165139167,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.7111111111111111,
+          "global_rmse": 0.7673883633959572,
+          "metrics": {
+            "fitness": 0.7837116154873164,
+            "rmse": 0.6489443853232786,
+            "translation_error_m": 1.2744220199660732,
+            "rotation_error_deg": 1.2412802036952866
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.7255813953488373,
+          "global_rmse": 0.8376016066647106,
+          "metrics": {
+            "fitness": 0.6515270164447925,
+            "rmse": 0.6168644659191735,
+            "translation_error_m": 0.614648094065832,
+            "rotation_error_deg": 2.85445796976693
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.7992957746478874,
+          "global_rmse": 0.6972320657443839,
+          "metrics": {
+            "fitness": 0.6972789115646258,
+            "rmse": 0.6218314595042004,
+            "translation_error_m": 1.6159692252688402,
+            "rotation_error_deg": 1.923986718931368
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8854545454545455,
+          "global_rmse": 0.7791463490051312,
+          "metrics": {
+            "fitness": 0.8583247156153051,
+            "rmse": 0.6619269553090144,
+            "translation_error_m": 1.7025552533154718,
+            "rotation_error_deg": 1.1790252699630375
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_11",
+      "coarse_voxel": 1.0,
+      "global_corr": 1.6,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.3102485577678267,
+        "rotation_error_mean_deg": 1.799723807762982,
+        "fitness_mean": 0.7479690963188579,
+        "rmse_mean": 0.6369966452594658,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.743455497382199,
+          "global_rmse": 0.773790877310409,
+          "metrics": {
+            "fitness": 0.7837116154873164,
+            "rmse": 0.6489012162228809,
+            "translation_error_m": 1.2743224844554335,
+            "rotation_error_deg": 1.2401435490046815
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.6375545851528385,
+          "global_rmse": 0.8626088623217784,
+          "metrics": {
+            "fitness": 0.6515270164447925,
+            "rmse": 0.6168644659248546,
+            "translation_error_m": 0.6146480924521915,
+            "rotation_error_deg": 2.8544579663093863
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.6824644549763034,
+          "global_rmse": 0.8740698755665969,
+          "metrics": {
+            "fitness": 0.6972789115646258,
+            "rmse": 0.6218314626892656,
+            "translation_error_m": 1.6159692273118236,
+            "rotation_error_deg": 1.9239867164402475
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.8365384615384616,
+          "global_rmse": 0.8523677252334925,
+          "metrics": {
+            "fitness": 0.859358841778697,
+            "rmse": 0.6603894362008619,
+            "translation_error_m": 1.7360544268518583,
+            "rotation_error_deg": 1.180306999297612
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfg_07",
+      "coarse_voxel": 0.8,
+      "global_corr": 2.0,
+      "fine_voxel": 0.5,
+      "icp_corr": 1.5,
+      "aggregate": {
+        "translation_error_mean_m": 1.3266022217985456,
+        "rotation_error_mean_deg": 1.7847379927913907,
+        "fitness_mean": 0.7488035422467618,
+        "rmse_mean": 0.636895501808175,
+        "num_valid_pairs": 4
+      },
+      "pairs": [
+        {
+          "pair_index": 0,
+          "global_fitness": 0.8431372549019608,
+          "global_rmse": 0.918935054058297,
+          "metrics": {
+            "fitness": 0.7870493991989319,
+            "rmse": 0.6486127080086622,
+            "translation_error_m": 1.3393463097042622,
+            "rotation_error_deg": 1.1821351084820222
+          }
+        },
+        {
+          "pair_index": 1,
+          "global_fitness": 0.7395348837209302,
+          "global_rmse": 1.0905476400261258,
+          "metrics": {
+            "fitness": 0.6515270164447925,
+            "rmse": 0.6168644658974736,
+            "translation_error_m": 0.6146480938954745,
+            "rotation_error_deg": 2.854457971368477
+          }
+        },
+        {
+          "pair_index": 2,
+          "global_fitness": 0.8345070422535211,
+          "global_rmse": 0.7761508449735717,
+          "metrics": {
+            "fitness": 0.6972789115646258,
+            "rmse": 0.6218314595042,
+            "translation_error_m": 1.6159692252688431,
+            "rotation_error_deg": 1.9239867189321262
+          }
+        },
+        {
+          "pair_index": 3,
+          "global_fitness": 0.9236363636363636,
+          "global_rmse": 0.9261846557776309,
+          "metrics": {
+            "fitness": 0.859358841778697,
+            "rmse": 0.6602733738223643,
+            "translation_error_m": 1.736445258325602,
+            "rotation_error_deg": 1.1783721723829363
+          }
+        }
+      ]
+    }
+  ]
+}
