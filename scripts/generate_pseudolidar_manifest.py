@@ -4,9 +4,9 @@ import argparse
 import json
 import os
 from pathlib import Path
+import sys
 from typing import Dict, List
 
-import depth_pro
 import numpy as np
 import open3d as o3d
 from PIL import Image
@@ -23,9 +23,6 @@ CAMERA_CHANNELS = [
     "CAM_BACK",
     "CAM_BACK_LEFT",
 ]
-
-ML_DEPTH_PRO_ROOT = Path("/home/clara/ml-depth-pro")
-DEPTH_PRO_CHECKPOINT = ML_DEPTH_PRO_ROOT / "checkpoints" / "depth_pro.pt"
 
 SCALE_BY_CHANNEL = {
     "CAM_FRONT": 1.00,
@@ -280,18 +277,38 @@ def load_lidar_top_pcd(nusc: NuScenes, sample_token: str) -> o3d.geometry.PointC
     return make_point_cloud(lidar_points_ego, lidar_colors)
 
 
+def import_depth_pro(depth_pro_root: Path):
+    depth_pro_root = depth_pro_root.expanduser().resolve()
+    if not depth_pro_root.exists():
+        raise FileNotFoundError(f"Depth Pro root not found: {depth_pro_root}")
+
+    sys.path.insert(0, str(depth_pro_root / "src"))
+    sys.path.insert(0, str(depth_pro_root))
+    os.chdir(str(depth_pro_root))
+
+    import depth_pro  # noqa: PLC0415
+
+    return depth_pro
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
-    parser.add_argument("--output-root", type=Path, default=Path("/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs"))
+    parser.add_argument("--output-root", type=Path, default=Path(__file__).resolve().parents[1] / "outputs")
     parser.add_argument("--max-samples", type=int, default=None)
+    parser.add_argument(
+        "--depth-pro-root",
+        type=Path,
+        default=Path(os.environ["DEPTH_PRO_ROOT"]) if "DEPTH_PRO_ROOT" in os.environ else Path(__file__).resolve().parents[2],
+        help="Path to the Depth Pro repository. It can also be provided through DEPTH_PRO_ROOT.",
+    )
     args = parser.parse_args()
 
     manifest = json.loads(args.manifest.read_text())
     nusc = NuScenes(version=manifest["version"], dataroot=manifest["dataroot"], verbose=False)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    os.chdir(str(ML_DEPTH_PRO_ROOT))
+    depth_pro = import_depth_pro(args.depth_pro_root)
     model, depth_transform = depth_pro.create_model_and_transforms()
     model.eval()
     model = model.to(device)
