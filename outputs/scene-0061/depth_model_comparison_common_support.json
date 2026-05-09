@@ -1,0 +1,47 @@
+{
+  "sample_index": 0,
+  "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+  "support": {
+    "r_min": 2.0,
+    "r_max": 35.0,
+    "z_min": -2.0,
+    "z_max": 2.5,
+    "bev_resolution": 0.5
+  },
+  "inputs": {
+    "Depth Pro": "outputs/scene-0061/ca9a282c9e77460f8360f564131a8af5/pcd_pseudolidar_ego.ply",
+    "Depth Anything 3": "outputs/scene-0061/depthanything3_sample_000/pcd_pseudolidar_ego.ply",
+    "LIDAR_TOP": "outputs/scene-0061/ca9a282c9e77460f8360f564131a8af5/pcd_lidar_top_ego.ply"
+  },
+  "lidar_stats": {
+    "name": "lidar_top_gt_common_support",
+    "num_points": 21992,
+    "range_min": 2.000042200088501,
+    "range_mean": 8.797609329223633,
+    "range_median": 6.411016464233398,
+    "range_p95": 22.75317173004151
+  },
+  "models": {
+    "Depth Pro": {
+      "pseudo_points": 14275,
+      "pseudo_to_gt_mean_nn": 0.7578806281089783,
+      "pseudo_to_gt_median_nn": 0.5176118612289429,
+      "pseudo_to_gt_p95_nn": 2.3703953266143793,
+      "gt_to_pseudo_mean_nn": 1.2202024459838867,
+      "gt_to_pseudo_median_nn": 0.770706057548523,
+      "gt_to_pseudo_p95_nn": 4.057555198669434,
+      "bev_iou": 0.2358936117325379
+    },
+    "Depth Anything 3": {
+      "pseudo_points": 14250,
+      "pseudo_to_gt_mean_nn": 0.8726080060005188,
+      "pseudo_to_gt_median_nn": 0.6317678689956665,
+      "pseudo_to_gt_p95_nn": 2.330519163608551,
+      "gt_to_pseudo_mean_nn": 1.2432421445846558,
+      "gt_to_pseudo_median_nn": 0.7907307744026184,
+      "gt_to_pseudo_p95_nn": 4.474666595458984,
+      "bev_iou": 0.2269922879177378
+    }
+  },
+  "interpretation": "Depth Pro obtiene una geometría ligeramente más consistente que Depth Anything 3 en soporte común para esta pipeline, por lo que se mantiene como baseline principal."
+}

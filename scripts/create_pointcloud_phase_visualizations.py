@@ -224,6 +224,48 @@ def create_phase_figures(run_summary: Dict, output_dir: Path) -> List[Path]:
     write_figure(fig, path)
     written.append(path)
 
+    depth_anything_path = output_dir.parent / "depthanything3_sample_000" / "pcd_pseudolidar_ego.ply"
+    if depth_anything_path.exists():
+        depth_anything_points, _ = load_pcd(depth_anything_path)
+        fig = go.Figure()
+        fig.add_trace(
+            point_trace(
+                "Depth Pro pseudo-LiDAR",
+                pseudo_points,
+                None,
+                color="rgb(31,119,180)",
+                max_points=22000,
+                opacity=0.75,
+                size=1.7,
+            )
+        )
+        fig.add_trace(
+            point_trace(
+                "Depth Anything 3 pseudo-LiDAR",
+                depth_anything_points,
+                None,
+                color="rgb(44,160,44)",
+                max_points=22000,
+                opacity=0.75,
+                size=1.7,
+            )
+        )
+        fig.add_trace(
+            point_trace(
+                "LIDAR_TOP",
+                lidar_points,
+                None,
+                color="rgb(220,40,40)",
+                max_points=22000,
+                opacity=0.45,
+                size=1.4,
+            )
+        )
+        set_scene_layout(fig, "Phase 3A - Depth Pro vs Depth Anything 3 vs LIDAR_TOP")
+        path = output_dir / "phase_03a_depthpro_depthanything3_lidar.html"
+        write_figure(fig, path)
+        written.append(path)
+
     src_points, _ = load_pcd(Path(first["pseudo_path"]))
     tgt_points, _ = load_pcd(Path(second["pseudo_path"]))
     src_front = select_front(src_points)

@@ -21,7 +21,8 @@ La pipeline general es:
 
 ```text
 6 cámaras RGB
--> Depth Pro
+-> comparación previa Depth Pro / Depth Anything 3
+-> Depth Pro como modelo base
 -> mapas de profundidad
 -> reproyección 3D
 -> fusión en ego frame
@@ -31,7 +32,7 @@ La pipeline general es:
 -> análisis de utilidad para SLAM
 ```
 
-El experimento parte de una pseudo-LiDAR 360 generada con las seis cámaras de nuScenes. Después se estudia si utilizar todo el anillo es realmente lo más adecuado para registro temporal o si algunas regiones son más estables que otras.
+El experimento parte de una comparación inicial entre `Depth Pro` y `Depth Anything 3` para justificar el modelo de profundidad usado como baseline. A partir de esa decisión, se genera una pseudo-LiDAR 360 con las seis cámaras de nuScenes. Después se estudia si utilizar todo el anillo es realmente lo más adecuado para registro temporal o si algunas regiones son más estables que otras.
 
 ## 3. Requisitos externos
 
@@ -39,8 +40,11 @@ Este repositorio no incluye ni el dataset ni el repositorio de Depth Pro. Para r
 
 - una instalación funcional de **Depth Pro**
 - el checkpoint de Depth Pro
+- una instalación funcional de **Depth Anything 3** si se quiere reproducir también la comparación entre modelos de profundidad desde inferencia
 - el dataset **nuScenes**, por ejemplo `v1.0-mini`
 - un entorno Python con las dependencias necesarias
+
+`Depth Anything 3` se utiliza como comparación auxiliar de calidad geométrica. No es necesario para ejecutar la rama principal de registro temporal, pero sí para reproducir desde cero la comparación entre modelos de profundidad.
 
 Dependencias principales:
 
@@ -60,10 +64,13 @@ Para que los comandos sean portables, se recomienda definir dos rutas:
 
 ```bash
 export DEPTH_PRO_ROOT=/ruta/al/repositorio/ml-depth-pro
+export DEPTH_ANYTHING3_ROOT=/ruta/al/repositorio/depth-anything-3
 export NUSCENES_ROOT=/ruta/al/dataset/nuscenes
 ```
 
 `DEPTH_PRO_ROOT` debe apuntar al repositorio de Depth Pro.
+
+`DEPTH_ANYTHING3_ROOT` debe apuntar al repositorio de Depth Anything 3. Si el paquete `depth_anything_3` ya está instalado en el entorno, esta variable puede omitirse.
 
 `NUSCENES_ROOT` debe apuntar a la carpeta donde está el dataset nuScenes.
 
@@ -107,6 +114,7 @@ Contiene los resultados generados:
 - nubes pseudo-LiDAR por frame
 - nubes densas fusionadas
 - métricas en formato JSON
+- comparación auxiliar entre modelos de profundidad
 - figuras PNG
 - comparaciones de trayectoria
 - visualizaciones de nubes de puntos
@@ -154,6 +162,59 @@ python scripts/generate_pseudolidar_manifest.py \
 ```
 
 El argumento `--depth-pro-root` permite usar cualquier instalación local de Depth Pro (puede omitirse si se ha definido la variable de entorno `DEPTH_PRO_ROOT`).
+
+### `scripts/generate_depthanything3_sample.py`
+
+Ejecuta la inferencia de `Depth Anything 3` sobre un sample de nuScenes y genera una pseudo-LiDAR equivalente a la de `Depth Pro`.
+
+Este script se utiliza para que la comparación entre modelos de profundidad sea reproducible. No parte de una nube externa ya preparada, sino que:
+
+- carga las seis cámaras del sample seleccionado
+- ejecuta `Depth Anything 3`
+- guarda los mapas de profundidad por cámara
+- reconstruye la nube densa fusionada en ego frame
+- genera la pseudo-LiDAR
+- guarda los `.ply` resultantes dentro de `outputs`
+
+Ejemplo:
+
+```bash
+python scripts/generate_depthanything3_sample.py \
+  --manifest manifests/scene-0061_first5.json \
+  --output-root outputs \
+  --sample-index 0 \
+  --depth-anything-root "$DEPTH_ANYTHING3_ROOT"
+```
+
+Si `depth_anything_3` ya está instalado en el entorno Python, el argumento `--depth-anything-root` puede omitirse.
+
+### `scripts/compare_depth_models_common_support.py`
+
+Recalcula la comparación entre la pseudo-LiDAR generada con `Depth Pro` y la pseudo-LiDAR generada con `Depth Anything 3`.
+
+Este script no copia métricas guardadas previamente: carga las nubes `.ply`, filtra ambas al mismo soporte común y calcula de nuevo las distancias nearest-neighbor frente a `LIDAR_TOP` y la IoU de ocupación BEV.
+
+Ejemplo:
+
+```bash
+python scripts/compare_depth_models_common_support.py \
+  --run-summary outputs/scene-0061/run_summary.json \
+  --depth-anything-sample-dir outputs/scene-0061/depthanything3_sample_000 \
+  --sample-index 0 \
+  --output outputs/scene-0061/depth_model_comparison_common_support.json
+```
+
+La carpeta indicada en `--depth-anything-sample-dir` debe contener, como mínimo, el archivo:
+
+```text
+pcd_pseudolidar_ego.ply
+```
+
+En este repositorio se incluye el recurso mínimo necesario para reproducir la comparación ya evaluada:
+
+```text
+outputs/scene-0061/depthanything3_sample_000/pcd_pseudolidar_ego.ply
+```
 
 ### `scripts/evaluate_pairwise_registration.py`
 
@@ -285,7 +346,7 @@ Las fases visualizadas son:
 - nube densa fusionada desde las seis cámaras
 - pseudo-LiDAR frente al LiDAR real
 - superposición de nube densa, pseudo-LiDAR y LiDAR real
-- anillo pseudo-LiDAR completo frente a la región frontal selecconada
+- anillo pseudo-LiDAR completo frente a la región frontal seleccionada
 - registro usando el anillo completo
 - región frontal de dos frames consecutivos antes del registro
 - región frontal de esos mismos frames después de aplicar `cfg_05`
@@ -314,7 +375,7 @@ notebooks/
 Los más importantes son:
 
 - `notebooks/01_select_samples_nuscenes.ipynb`: selección de escena y samples.
-- `notebooks/02_generate_pseudolidar_from_manifest.ipynb`: generación de pseudo-LiDAR.
+- `notebooks/02_generate_pseudolidar_from_manifest.ipynb`: generación con Depth Pro, inferencia de Depth Anything 3 para el sample de comparación y evaluación geométrica entre ambos.
 - `notebooks/03_pairwise_registration.ipynb`: primer análisis de registro entre frames.
 - `notebooks/06_region_analysis.ipynb`: análisis por regiones y distancia.
 - `notebooks/07_subset_registration_comparison.ipynb`: comparación entre anillo completo y subconjuntos.
@@ -349,6 +410,17 @@ Mide el error medio de las correspondencias aceptadas durante ICP.
 Mide cómo crece el error al encadenar transformaciones entre varios frames consecutivos. Es importante porque se aproxima más a una situación tipo SLAM u odometría.
 
 ## 9. Resultados principales
+
+### Comparación entre modelos de profundidad
+
+Antes de fijar la rama principal del experimento, se compara la pseudo-LiDAR obtenida con `Depth Pro` y con `Depth Anything 3` en soporte común frente al LiDAR real.
+
+Resultados aproximados:
+
+- `Depth Pro`: mediana pseudo-LiDAR -> GT de `0.52 m` e IoU BEV de `0.236`
+- `Depth Anything 3`: mediana pseudo-LiDAR -> GT de `0.63 m` e IoU BEV de `0.227`
+
+En este experimento, `Depth Pro` ofrece una geometría algo más consistente, por lo que se mantiene como modelo base para el análisis de registro temporal.
 
 ### Anillo completo frente a región frontal
 
@@ -469,6 +541,7 @@ outputs/scene-0061
 Ficheros JSON importantes:
 
 - `outputs/scene-0061/run_summary.json`
+- `outputs/scene-0061/depth_model_comparison_common_support.json`
 - `outputs/scene-0061/pairwise_registration_metrics.json`
 - `outputs/scene-0061/pairwise_region_analysis.json`
 - `outputs/scene-0061/subset_registration_comparison.json`
@@ -477,6 +550,11 @@ Ficheros JSON importantes:
 - `outputs/scene-0061/front_global_icp_param_sweep.json`
 - `outputs/scene-0061/front_best_combination.json`
 - `outputs/scene-0061/accumulated_trajectory_comparison.json`
+
+Recurso auxiliar para comparar modelos de profundidad:
+
+- `outputs/scene-0061/depthanything3_sample_000/pcd_pseudolidar_ego.ply`
+- `outputs/scene-0061/depthanything3_sample_000/summary.json`
 
 Figuras importantes:
 
@@ -491,6 +569,7 @@ Visualizaciones 3D interactivas:
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_01_dense_ring_6cams.html`
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_02_pseudolidar_vs_lidar_gt.html`
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_03_ring_pseudo_lidar_overlay.html`
+- `outputs/scene-0061/pointcloud_phase_visualizations/phase_03a_depthpro_depthanything3_lidar.html`
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_03b_full_ring_vs_front_subset.html`
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_03c_full_ring_after_icp.html`
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_04a_front_pair_before_registration.html`

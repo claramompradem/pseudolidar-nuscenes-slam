@@ -1,0 +1,21 @@
+{
+  "model": "Depth Anything 3",
+  "model_id": "depth-anything/DA3METRIC-LARGE",
+  "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+  "index": 0,
+  "timestamp_s": 1532402927.647951,
+  "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depthanything3_sample_000/pcd_ring_6cams_ego.ply",
+  "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depthanything3_sample_000/pcd_pseudolidar_ego.ply",
+  "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depthanything3_sample_000/pcd_lidar_top_ego.ply",
+  "inference_time_s_by_channel": {
+    "CAM_FRONT_LEFT": 0.8185088469999755,
+    "CAM_FRONT": 6.084009220000098,
+    "CAM_FRONT_RIGHT": 0.4036109110002144,
+    "CAM_BACK_RIGHT": 0.0819724220000353,
+    "CAM_BACK": 0.0813456099999712,
+    "CAM_BACK_LEFT": 0.08076874700009284
+  },
+  "inference_time_s_total": 7.550215757000387,
+  "ring_num_points": 204439,
+  "pseudo_num_points": 21319
+}
