@@ -14,6 +14,7 @@ Para responder a esta pregunta se evalúan dos aspectos:
 
 - la calidad geométrica de la pseudo-LiDAR frente al LiDAR real `LIDAR_TOP`
 - la estabilidad temporal de la pseudo-LiDAR al registrar frames consecutivos
+- la diferencia entre registrar pseudo-LiDAR y registrar LiDAR real con el mismo backend
 
 ## 2. Contexto del experimento
 
@@ -28,7 +29,9 @@ La pipeline general es:
 -> fusión en ego frame
 -> pseudo-LiDAR
 -> comparación con LIDAR_TOP
+-> consistencia temporal con pose real
 -> registro temporal
+-> baseline de registro con LiDAR real
 -> análisis de utilidad para SLAM
 ```
 
@@ -231,6 +234,70 @@ python scripts/evaluate_pairwise_registration.py \
   --version v1.0-mini
 ```
 
+### `scripts/evaluate_lidar_registration_baseline.py`
+
+Evalúa el registro temporal usando el LiDAR real `LIDAR_TOP` como entrada.
+
+La finalidad es obtener un baseline con geometría métrica real usando un backend comparable al de pseudo-LiDAR. Si el LiDAR real registra mucho mejor que la pseudo-LiDAR, parte de la diferencia se debe a la representación generada desde cámaras y no solo al algoritmo ICP.
+
+El script:
+
+- lee `outputs/scene-0061/run_summary.json`
+- carga las nubes `LIDAR_TOP` guardadas por sample
+- registra pares consecutivos con ICP directo
+- prueba también una variante de alineación global seguida de ICP
+- compara la transformación estimada con la pose real de nuScenes
+- genera JSON, CSV y una figura comparativa con pseudo-LiDAR si existen los JSON previos
+
+Ejemplo:
+
+```bash
+python scripts/evaluate_lidar_registration_baseline.py \
+  --run-summary outputs/scene-0061/run_summary.json \
+  --dataroot "$NUSCENES_ROOT" \
+  --version v1.0-mini \
+  --output outputs/scene-0061/lidar_registration_baseline.json
+```
+
+Genera:
+
+- `outputs/scene-0061/lidar_registration_baseline.json`
+- `outputs/scene-0061/lidar_registration_baseline.csv`
+- `outputs/scene-0061/lidar_vs_pseudolidar_registration_baseline.png`
+
+### `scripts/evaluate_temporal_consistency.py`
+
+Evalúa la consistencia temporal de la pseudo-LiDAR sin estimar la pose con ICP.
+
+Para cada par de frames consecutivos:
+
+- carga la pseudo-LiDAR del frame `t`
+- carga la pseudo-LiDAR del frame `t+1`
+- obtiene la transformación real entre ambos frames a partir de las poses de nuScenes
+- transforma la nube de `t` al sistema de coordenadas de `t+1`
+- compara ambas nubes mediante nearest-neighbor y ratios de solape
+
+Este análisis permite separar dos fuentes de error:
+
+- errores propios de la representación pseudo-LiDAR
+- errores introducidos posteriormente por el algoritmo de registro
+
+Ejemplo:
+
+```bash
+python scripts/evaluate_temporal_consistency.py \
+  --run-summary outputs/scene-0061/run_summary.json \
+  --dataroot "$NUSCENES_ROOT" \
+  --version v1.0-mini \
+  --output outputs/scene-0061/temporal_consistency_metrics.json
+```
+
+Genera:
+
+- `outputs/scene-0061/temporal_consistency_metrics.json`
+- `outputs/scene-0061/temporal_consistency_by_region.csv`
+- `outputs/scene-0061/temporal_consistency_by_region.png`
+
 ### `scripts/analyze_pairwise_regions.py`
 
 Analiza el registro separando la nube por regiones espaciales y por distancia.
@@ -383,7 +450,10 @@ Los más importantes son:
 - `notebooks/10_front_tuning_experiments.ipynb`: ajuste fino de selección y parámetros.
 - `notebooks/11_accumulated_trajectory.ipynb`: trayectoria acumulada.
 - `notebooks/12_pointcloud_comparison_best_config.ipynb`: comparación visual de nubes.
-- `notebooks/13_final_conclusions_and_results.ipynb`: conclusiones finales.
+- `notebooks/13_temporal_consistency_analysis.ipynb`: consistencia temporal usando la pose real de nuScenes.
+- `notebooks/14_lidar_baseline_comparison.ipynb`: comparación entre registro con LiDAR real y registro con pseudo-LiDAR.
+- `notebooks/15_ablation_summary.ipynb`: resumen de ablaciones experimentales.
+- `notebooks/16_final_experimental_synthesis.ipynb`: síntesis final de resultados y conclusiones.
 
 ## 8. Métricas utilizadas
 
@@ -404,6 +474,26 @@ Un valor alto de fitness no garantiza por sí solo una buena estimación del mov
 ### RMSE
 
 Mide el error medio de las correspondencias aceptadas durante ICP.
+
+### Baseline con LiDAR real
+
+Mide cuánto error obtiene el mismo backend de registro cuando la entrada es el LiDAR real `LIDAR_TOP`.
+
+Este baseline sirve como referencia de geometría fiable. No representa una solución cámara-only, sino un límite superior práctico para interpretar cuánto se aleja la pseudo-LiDAR del comportamiento del sensor LiDAR real.
+
+### Consistencia temporal con pose real
+
+Mide si la pseudo-LiDAR generada en frames consecutivos representa de forma parecida la misma escena cuando se alinean las nubes usando la pose real de nuScenes.
+
+Las métricas usadas son:
+
+- distancia nearest-neighbor media
+- distancia nearest-neighbor mediana
+- percentil 90 de distancia nearest-neighbor
+- ratio de solape a `0.5 m`
+- ratio de solape a `1.0 m`
+
+Esta evaluación no mide la calidad de ICP, sino la estabilidad temporal de la representación pseudo-LiDAR.
 
 ### Error acumulado
 
@@ -448,6 +538,31 @@ El barrido de parámetros reduce el error hasta aproximadamente:
 
 - `1.18 m` de error medio de traslación
 - `1.60 grados` de error medio de rotación
+
+### Consistencia temporal
+
+Al alinear pseudo-LiDARs consecutivas usando la pose real de nuScenes, la región frontal presenta mejor coherencia temporal que el anillo completo.
+
+Resultados aproximados:
+
+- anillo completo: `0.91 m` de distancia nearest-neighbor media y `0.73` de solape a `1.0 m`
+- región frontal: `0.71 m` de distancia nearest-neighbor media y `0.79` de solape a `1.0 m`
+- región cercana: `0.49 m` de distancia nearest-neighbor media y `0.88` de solape a `1.0 m`
+- región lejana: `1.86 m` de distancia nearest-neighbor media y `0.49` de solape a `1.0 m`
+
+Esto ayuda a explicar por qué las regiones cercanas o frontales son más útiles para registro que zonas lejanas o menos estables.
+
+### Baseline LiDAR real
+
+Al registrar `LIDAR_TOP` real con el mismo backend de ICP, el error con la nube completa es mucho menor que con pseudo-LiDAR.
+
+Resultados aproximados:
+
+- `LiDAR real all + ICP`: `0.07 m` y `0.22 grados`
+- `pseudo-LiDAR all + ICP`: `1.51 m` y `1.27 grados`
+- `pseudo-LiDAR front cfg_05`: `1.18 m` y `1.60 grados`
+
+Esto confirma que el backend de registro puede funcionar bien cuando la geometría es fiable, y que una parte importante del error de pseudo-LiDAR procede de la representación generada desde cámaras.
 
 ### Trayectoria acumulada
 
@@ -530,6 +645,26 @@ python scripts/evaluate_accumulated_trajectory.py \
   --version v1.0-mini
 ```
 
+Evaluar consistencia temporal:
+
+```bash
+python scripts/evaluate_temporal_consistency.py \
+  --run-summary outputs/scene-0061/run_summary.json \
+  --dataroot "$NUSCENES_ROOT" \
+  --version v1.0-mini \
+  --output outputs/scene-0061/temporal_consistency_metrics.json
+```
+
+Evaluar baseline LiDAR real:
+
+```bash
+python scripts/evaluate_lidar_registration_baseline.py \
+  --run-summary outputs/scene-0061/run_summary.json \
+  --dataroot "$NUSCENES_ROOT" \
+  --version v1.0-mini \
+  --output outputs/scene-0061/lidar_registration_baseline.json
+```
+
 ## 11. Outputs principales
 
 Los resultados principales se generan en:
@@ -550,6 +685,10 @@ Ficheros JSON importantes:
 - `outputs/scene-0061/front_global_icp_param_sweep.json`
 - `outputs/scene-0061/front_best_combination.json`
 - `outputs/scene-0061/accumulated_trajectory_comparison.json`
+- `outputs/scene-0061/temporal_consistency_metrics.json`
+- `outputs/scene-0061/temporal_consistency_by_region.csv`
+- `outputs/scene-0061/lidar_registration_baseline.json`
+- `outputs/scene-0061/lidar_registration_baseline.csv`
 
 Recurso auxiliar para comparar modelos de profundidad:
 
@@ -560,6 +699,8 @@ Figuras importantes:
 
 - `outputs/scene-0061/accumulated_trajectory_xy.png`
 - `outputs/scene-0061/accumulated_trajectory_drift.png`
+- `outputs/scene-0061/temporal_consistency_by_region.png`
+- `outputs/scene-0061/lidar_vs_pseudolidar_registration_baseline.png`
 - `outputs/scene-0061/pointcloud_comparison_best_cfg05.png`
 - `outputs/scene-0061/pointcloud_comparison_narrow_cfg05.png`
 
@@ -579,6 +720,6 @@ Visualizaciones 3D interactivas:
 
 La pseudo-LiDAR generada desde cámaras no sustituye directamente a un LiDAR real para SLAM robusto. Sin embargo, sí contiene información geométrica útil para registro temporal si se utiliza de forma selectiva.
 
-La conclusión principal es que la pseudo-LiDAR no tiene la misma fiabilidad en todas las zonas. En este experimento, la parte frontal funciona mejor que usar todo el anillo y combinar una alineación global con ICP ayuda a estimar mejor el movimiento entre frames.
+La conclusión principal es que la pseudo-LiDAR no tiene la misma fiabilidad en todas las zonas. En este experimento, la parte frontal y las zonas cercanas presentan mejor consistencia temporal que las zonas lejanas, y la parte frontal funciona mejor que usar todo el anillo para el registro.
 
-Por tanto, el resultado no demuestra una sustitución completa del LiDAR, pero sí una utilidad real de la pseudo-LiDAR como representación intermedia para análisis geométrico y registro temporal.
+Por tanto, el resultado no demuestra una sustitución completa del LiDAR, pero sí una utilidad real de la pseudo-LiDAR como representación intermedia para análisis geométrico, consistencia temporal y registro entre frames.

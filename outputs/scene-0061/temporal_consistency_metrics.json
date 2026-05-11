@@ -1,0 +1,372 @@
+{
+  "scene_name": "scene-0061",
+  "num_pairs": 4,
+  "method": "Source pseudo-LiDAR is transformed into the next ego frame using the nuScenes ground-truth relative pose, then compared to the target pseudo-LiDAR with nearest neighbors.",
+  "regions": [
+    "all",
+    "front",
+    "near",
+    "mid",
+    "far",
+    "left",
+    "right"
+  ],
+  "pairs": [
+    {
+      "pair_index": 0,
+      "source_token": "ca9a282c9e77460f8360f564131a8af5",
+      "target_token": "39586f9d59004284a7114a68825e8eec",
+      "dt_s": 0.4998960494995117,
+      "regions": {
+        "all": {
+          "num_source_points": 14477,
+          "num_target_points": 14184,
+          "mean_nn_m": 0.9467871189117432,
+          "median_nn_m": 0.5429620742797852,
+          "p90_nn_m": 2.1408012866973873,
+          "overlap_ratio_0p5m": 0.4708848518339435,
+          "overlap_ratio_1p0m": 0.6948262761621883
+        },
+        "front": {
+          "num_source_points": 4639,
+          "num_target_points": 6671,
+          "mean_nn_m": 0.6486719250679016,
+          "median_nn_m": 0.3811526596546173,
+          "p90_nn_m": 1.5724255561828604,
+          "overlap_ratio_0p5m": 0.59215348135374,
+          "overlap_ratio_1p0m": 0.7973701228713085
+        },
+        "near": {
+          "num_source_points": 5731,
+          "num_target_points": 7352,
+          "mean_nn_m": 0.5222530364990234,
+          "median_nn_m": 0.28335249423980713,
+          "p90_nn_m": 1.4506357908248901,
+          "overlap_ratio_0p5m": 0.7070319316000698,
+          "overlap_ratio_1p0m": 0.8459256674227883
+        },
+        "mid": {
+          "num_source_points": 6298,
+          "num_target_points": 5077,
+          "mean_nn_m": 0.8723483085632324,
+          "median_nn_m": 0.6766712665557861,
+          "p90_nn_m": 1.8770231127738952,
+          "overlap_ratio_0p5m": 0.3644013972689743,
+          "overlap_ratio_1p0m": 0.6808510638297872
+        },
+        "far": {
+          "num_source_points": 2448,
+          "num_target_points": 1755,
+          "mean_nn_m": 2.2384796142578125,
+          "median_nn_m": 1.578676700592041,
+          "p90_nn_m": 5.5582082271575945,
+          "overlap_ratio_0p5m": 0.17933006535947713,
+          "overlap_ratio_1p0m": 0.36764705882352944
+        },
+        "left": {
+          "num_source_points": 7698,
+          "num_target_points": 7493,
+          "mean_nn_m": 1.007365345954895,
+          "median_nn_m": 0.5578404664993286,
+          "p90_nn_m": 2.107512903213501,
+          "overlap_ratio_0p5m": 0.46492595479345283,
+          "overlap_ratio_1p0m": 0.6871914783060535
+        },
+        "right": {
+          "num_source_points": 6779,
+          "num_target_points": 6691,
+          "mean_nn_m": 0.88344806432724,
+          "median_nn_m": 0.5327713489532471,
+          "p90_nn_m": 2.223407363891601,
+          "overlap_ratio_0p5m": 0.4772090278802183,
+          "overlap_ratio_1p0m": 0.701725918277032
+        }
+      }
+    },
+    {
+      "pair_index": 1,
+      "source_token": "39586f9d59004284a7114a68825e8eec",
+      "target_token": "356d81f38dd9473ba590f39e266f54e5",
+      "dt_s": 0.5502011775970459,
+      "regions": {
+        "all": {
+          "num_source_points": 14433,
+          "num_target_points": 13236,
+          "mean_nn_m": 0.7849876284599304,
+          "median_nn_m": 0.439214289188385,
+          "p90_nn_m": 2.05376992225647,
+          "overlap_ratio_0p5m": 0.5463174669160951,
+          "overlap_ratio_1p0m": 0.7482158941315042
+        },
+        "front": {
+          "num_source_points": 4514,
+          "num_target_points": 6419,
+          "mean_nn_m": 0.748450756072998,
+          "median_nn_m": 0.34183400869369507,
+          "p90_nn_m": 2.06739935874939,
+          "overlap_ratio_0p5m": 0.6038989809481613,
+          "overlap_ratio_1p0m": 0.7769162605228179
+        },
+        "near": {
+          "num_source_points": 6660,
+          "num_target_points": 6805,
+          "mean_nn_m": 0.48481282591819763,
+          "median_nn_m": 0.23745229840278625,
+          "p90_nn_m": 1.1298829913139348,
+          "overlap_ratio_0p5m": 0.7548048048048048,
+          "overlap_ratio_1p0m": 0.8908408408408408
+        },
+        "mid": {
+          "num_source_points": 5685,
+          "num_target_points": 4145,
+          "mean_nn_m": 0.9871839284896851,
+          "median_nn_m": 0.6540120244026184,
+          "p90_nn_m": 2.406832695007325,
+          "overlap_ratio_0p5m": 0.4019349164467898,
+          "overlap_ratio_1p0m": 0.6508355321020228
+        },
+        "far": {
+          "num_source_points": 2088,
+          "num_target_points": 2286,
+          "mean_nn_m": 2.3058881759643555,
+          "median_nn_m": 0.901875913143158,
+          "p90_nn_m": 3.3164593219757044,
+          "overlap_ratio_0p5m": 0.26676245210727967,
+          "overlap_ratio_1p0m": 0.5493295019157088
+        },
+        "left": {
+          "num_source_points": 7676,
+          "num_target_points": 6404,
+          "mean_nn_m": 0.8597506880760193,
+          "median_nn_m": 0.3931084871292114,
+          "p90_nn_m": 2.516138792037964,
+          "overlap_ratio_0p5m": 0.5844189682126107,
+          "overlap_ratio_1p0m": 0.720166753517457
+        },
+        "right": {
+          "num_source_points": 6757,
+          "num_target_points": 6832,
+          "mean_nn_m": 0.7079089283943176,
+          "median_nn_m": 0.4966120719909668,
+          "p90_nn_m": 1.5219475507736206,
+          "overlap_ratio_0p5m": 0.5019979280745893,
+          "overlap_ratio_1p0m": 0.777564007695723
+        }
+      }
+    },
+    {
+      "pair_index": 2,
+      "source_token": "356d81f38dd9473ba590f39e266f54e5",
+      "target_token": "e0845f5322254dafadbbed75aaa07969",
+      "dt_s": 0.49930477142333984,
+      "regions": {
+        "all": {
+          "num_source_points": 13450,
+          "num_target_points": 12565,
+          "mean_nn_m": 1.2693668603897095,
+          "median_nn_m": 0.548066258430481,
+          "p90_nn_m": 3.8061715126037616,
+          "overlap_ratio_0p5m": 0.4754646840148699,
+          "overlap_ratio_1p0m": 0.6572490706319702
+        },
+        "front": {
+          "num_source_points": 3579,
+          "num_target_points": 4659,
+          "mean_nn_m": 0.7011010646820068,
+          "median_nn_m": 0.30886468291282654,
+          "p90_nn_m": 1.8878347396850588,
+          "overlap_ratio_0p5m": 0.6898575020955574,
+          "overlap_ratio_1p0m": 0.8206202849958089
+        },
+        "near": {
+          "num_source_points": 6515,
+          "num_target_points": 6866,
+          "mean_nn_m": 0.5176767706871033,
+          "median_nn_m": 0.2800965905189514,
+          "p90_nn_m": 1.3035411596298219,
+          "overlap_ratio_0p5m": 0.7122026093630084,
+          "overlap_ratio_1p0m": 0.8675364543361473
+        },
+        "mid": {
+          "num_source_points": 4328,
+          "num_target_points": 3387,
+          "mean_nn_m": 2.559502363204956,
+          "median_nn_m": 1.0866436958312988,
+          "p90_nn_m": 7.027820920944216,
+          "overlap_ratio_0p5m": 0.30730129390018485,
+          "overlap_ratio_1p0m": 0.47966728280961185
+        },
+        "far": {
+          "num_source_points": 2607,
+          "num_target_points": 2312,
+          "mean_nn_m": 1.7940282821655273,
+          "median_nn_m": 1.1858152151107788,
+          "p90_nn_m": 3.7817464351654064,
+          "overlap_ratio_0p5m": 0.16072113540467972,
+          "overlap_ratio_1p0m": 0.4169543536632144
+        },
+        "left": {
+          "num_source_points": 6534,
+          "num_target_points": 5014,
+          "mean_nn_m": 1.854081153869629,
+          "median_nn_m": 0.835162878036499,
+          "p90_nn_m": 5.476631927490234,
+          "overlap_ratio_0p5m": 0.37771655953474137,
+          "overlap_ratio_1p0m": 0.5466789103152739
+        },
+        "right": {
+          "num_source_points": 6916,
+          "num_target_points": 7551,
+          "mean_nn_m": 0.7402551770210266,
+          "median_nn_m": 0.4077177345752716,
+          "p90_nn_m": 1.724651038646698,
+          "overlap_ratio_0p5m": 0.5672353961827646,
+          "overlap_ratio_1p0m": 0.7612781954887218
+        }
+      }
+    },
+    {
+      "pair_index": 3,
+      "source_token": "e0845f5322254dafadbbed75aaa07969",
+      "target_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "dt_s": 0.5004441738128662,
+      "regions": {
+        "all": {
+          "num_source_points": 12627,
+          "num_target_points": 11538,
+          "mean_nn_m": 0.6326625943183899,
+          "median_nn_m": 0.4215284287929535,
+          "p90_nn_m": 1.4141791582107544,
+          "overlap_ratio_0p5m": 0.5660093450542488,
+          "overlap_ratio_1p0m": 0.812544547398432
+        },
+        "front": {
+          "num_source_points": 3249,
+          "num_target_points": 4751,
+          "mean_nn_m": 0.7398649454116821,
+          "median_nn_m": 0.43659910559654236,
+          "p90_nn_m": 1.903691816329956,
+          "overlap_ratio_0p5m": 0.5574022776238843,
+          "overlap_ratio_1p0m": 0.7820867959372114
+        },
+        "near": {
+          "num_source_points": 6118,
+          "num_target_points": 6228,
+          "mean_nn_m": 0.44957342743873596,
+          "median_nn_m": 0.27736014127731323,
+          "p90_nn_m": 0.8594519674777991,
+          "overlap_ratio_0p5m": 0.7477933965348152,
+          "overlap_ratio_1p0m": 0.9187643020594966
+        },
+        "mid": {
+          "num_source_points": 4155,
+          "num_target_points": 3337,
+          "mean_nn_m": 0.6941356658935547,
+          "median_nn_m": 0.5348772406578064,
+          "p90_nn_m": 1.3849671125411986,
+          "overlap_ratio_0p5m": 0.47388688327316486,
+          "overlap_ratio_1p0m": 0.7600481347773766
+        },
+        "far": {
+          "num_source_points": 2354,
+          "num_target_points": 1973,
+          "mean_nn_m": 1.1025859117507935,
+          "median_nn_m": 0.8303425312042236,
+          "p90_nn_m": 2.2230040073394783,
+          "overlap_ratio_0p5m": 0.2374681393372982,
+          "overlap_ratio_1p0m": 0.6096006796941377
+        },
+        "left": {
+          "num_source_points": 5097,
+          "num_target_points": 4209,
+          "mean_nn_m": 0.6771727800369263,
+          "median_nn_m": 0.5032289624214172,
+          "p90_nn_m": 1.4112720966339116,
+          "overlap_ratio_0p5m": 0.49715518932705516,
+          "overlap_ratio_1p0m": 0.788306847164999
+        },
+        "right": {
+          "num_source_points": 7530,
+          "num_target_points": 7329,
+          "mean_nn_m": 0.6083052158355713,
+          "median_nn_m": 0.3770965337753296,
+          "p90_nn_m": 1.4243329405784617,
+          "overlap_ratio_0p5m": 0.6122177954847278,
+          "overlap_ratio_1p0m": 0.8280212483399735
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "all": {
+      "mean_nn_m": 0.9084510505199432,
+      "median_nn_m": 0.48794276267290115,
+      "p90_nn_m": 2.353730469942093,
+      "overlap_ratio_0p5m": 0.5146690869547893,
+      "overlap_ratio_1p0m": 0.7282089470810237,
+      "num_source_points_mean": 13746.75,
+      "num_target_points_mean": 12880.75,
+      "num_valid_pairs": 4
+    },
+    "front": {
+      "mean_nn_m": 0.7095221728086472,
+      "median_nn_m": 0.3671126142144203,
+      "p90_nn_m": 1.8578378677368164,
+      "overlap_ratio_0p5m": 0.6108280605053358,
+      "overlap_ratio_1p0m": 0.7942483660817866,
+      "num_source_points_mean": 3995.25,
+      "num_target_points_mean": 5625.0,
+      "num_valid_pairs": 4
+    },
+    "near": {
+      "mean_nn_m": 0.4935790151357651,
+      "median_nn_m": 0.2695653811097145,
+      "p90_nn_m": 1.1858779773116115,
+      "overlap_ratio_0p5m": 0.7304581855756747,
+      "overlap_ratio_1p0m": 0.8807668161648182,
+      "num_source_points_mean": 6256.0,
+      "num_target_points_mean": 6812.75,
+      "num_valid_pairs": 4
+    },
+    "mid": {
+      "mean_nn_m": 1.278292566537857,
+      "median_nn_m": 0.7380510568618774,
+      "p90_nn_m": 3.174160960316659,
+      "overlap_ratio_0p5m": 0.3868811227222785,
+      "overlap_ratio_1p0m": 0.6428505033796996,
+      "num_source_points_mean": 5116.5,
+      "num_target_points_mean": 3986.5,
+      "num_valid_pairs": 4
+    },
+    "far": {
+      "mean_nn_m": 1.8602454960346222,
+      "median_nn_m": 1.1241775900125504,
+      "p90_nn_m": 3.719854497909546,
+      "overlap_ratio_0p5m": 0.21107044805218367,
+      "overlap_ratio_1p0m": 0.48588289852414757,
+      "num_source_points_mean": 2374.25,
+      "num_target_points_mean": 2081.5,
+      "num_valid_pairs": 4
+    },
+    "left": {
+      "mean_nn_m": 1.0995924919843674,
+      "median_nn_m": 0.5723351985216141,
+      "p90_nn_m": 2.8778889298439028,
+      "overlap_ratio_0p5m": 0.48105416796696504,
+      "overlap_ratio_1p0m": 0.6855859973259458,
+      "num_source_points_mean": 6751.25,
+      "num_target_points_mean": 5780.0,
+      "num_valid_pairs": 4
+    },
+    "right": {
+      "mean_nn_m": 0.7349793463945389,
+      "median_nn_m": 0.45354942232370377,
+      "p90_nn_m": 1.7235847234725954,
+      "overlap_ratio_0p5m": 0.539665036905575,
+      "overlap_ratio_1p0m": 0.7671473424503626,
+      "num_source_points_mean": 6995.5,
+      "num_target_points_mean": 7100.75,
+      "num_valid_pairs": 4
+    }
+  }
+}
