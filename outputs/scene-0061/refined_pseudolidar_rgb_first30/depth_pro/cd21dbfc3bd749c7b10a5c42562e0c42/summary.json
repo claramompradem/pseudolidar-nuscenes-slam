@@ -1,0 +1,11 @@
+{
+  "sample_token": "cd21dbfc3bd749c7b10a5c42562e0c42",
+  "index": 15,
+  "timestamp_s": null,
+  "depth_source": "depth_pro",
+  "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/cd21dbfc3bd749c7b10a5c42562e0c42/pcd_ring_6cams_ego.ply",
+  "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/cd21dbfc3bd749c7b10a5c42562e0c42/pcd_pseudolidar_ego.ply",
+  "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/cd21dbfc3bd749c7b10a5c42562e0c42/pcd_lidar_top_ego.ply",
+  "ring_num_points": 212306,
+  "pseudo_num_points": 24254
+}

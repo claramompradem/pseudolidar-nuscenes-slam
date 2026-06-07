@@ -1,0 +1,14 @@
+{
+  "train_depth_pro": {
+    "mae_m": 2.0455589294433594,
+    "rmse_m": 5.000824451446533,
+    "valid_pixels": 3032
+  },
+  "val_depth_pro": {
+    "mae_m": 2.0455589294433594,
+    "rmse_m": 5.000824451446533,
+    "valid_pixels": 3032
+  },
+  "split_note": "single_entry_smoke_test_same_sample_for_train_and_val",
+  "num_entries": 1
+}

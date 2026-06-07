@@ -1,0 +1,168 @@
+{
+  "checkpoint": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depth_refinement_dataset_first10/refiner_training_rgb/best_depth_refiner.pt",
+  "dataset_dir": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depth_refinement_dataset_first10",
+  "eval_split": "validation",
+  "evaluate_validation_only": true,
+  "use_rgb": true,
+  "num_entries": 12,
+  "aggregate": {
+    "depth_pro": {
+      "mae_m": 4.05308211278362,
+      "rmse_m": 8.12116798667407,
+      "valid_pixels": 44029
+    },
+    "refined": {
+      "mae_m": 3.001462559211684,
+      "rmse_m": 6.040067444411964,
+      "valid_pixels": 44029
+    },
+    "delta_mae_m": -1.0516195535719355,
+    "delta_rmse_m": -2.0811005422621065
+  },
+  "rows": [
+    {
+      "sample_index": 2,
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "channel": "CAM_FRONT_LEFT",
+      "valid_pixels": 3643,
+      "depth_pro_mae_m": 1.4764793997049135,
+      "refined_mae_m": 2.375526480579193,
+      "delta_mae_m": 0.8990470808742796,
+      "depth_pro_rmse_m": 3.4052559370542563,
+      "refined_rmse_m": 3.5554587025551396,
+      "delta_rmse_m": 0.1502027655008833
+    },
+    {
+      "sample_index": 2,
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "channel": "CAM_FRONT",
+      "valid_pixels": 2905,
+      "depth_pro_mae_m": 2.047300922439759,
+      "refined_mae_m": 1.7291598873171257,
+      "delta_mae_m": -0.3181410351226335,
+      "depth_pro_rmse_m": 5.481409523630643,
+      "refined_rmse_m": 4.2317734611514854,
+      "delta_rmse_m": -1.2496360624791576
+    },
+    {
+      "sample_index": 2,
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "channel": "CAM_FRONT_RIGHT",
+      "valid_pixels": 3217,
+      "depth_pro_mae_m": 3.497515943134131,
+      "refined_mae_m": 3.6945450924774637,
+      "delta_mae_m": 0.1970291493433325,
+      "depth_pro_rmse_m": 7.093030505586889,
+      "refined_rmse_m": 6.167406747387551,
+      "delta_rmse_m": -0.9256237581993387
+    },
+    {
+      "sample_index": 2,
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "channel": "CAM_BACK_RIGHT",
+      "valid_pixels": 3283,
+      "depth_pro_mae_m": 6.582280521816935,
+      "refined_mae_m": 3.344797358075693,
+      "delta_mae_m": -3.2374831637412425,
+      "depth_pro_rmse_m": 10.184767874105233,
+      "refined_rmse_m": 5.941817830587838,
+      "delta_rmse_m": -4.2429500435173955
+    },
+    {
+      "sample_index": 2,
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "channel": "CAM_BACK",
+      "valid_pixels": 4875,
+      "depth_pro_mae_m": 9.438454326923077,
+      "refined_mae_m": 7.181700320512821,
+      "delta_mae_m": -2.2567540064102563,
+      "depth_pro_rmse_m": 14.569140639528433,
+      "refined_rmse_m": 11.757427003540771,
+      "delta_rmse_m": -2.8117136359876618
+    },
+    {
+      "sample_index": 2,
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "channel": "CAM_BACK_LEFT",
+      "valid_pixels": 4320,
+      "depth_pro_mae_m": 2.4180711534288193,
+      "refined_mae_m": 1.5217936197916666,
+      "delta_mae_m": -0.8962775336371527,
+      "depth_pro_rmse_m": 4.180657284084357,
+      "refined_rmse_m": 3.3091956461733685,
+      "delta_rmse_m": -0.8714616379109885
+    },
+    {
+      "sample_index": 7,
+      "sample_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "channel": "CAM_FRONT_LEFT",
+      "valid_pixels": 3616,
+      "depth_pro_mae_m": 1.5400030085470824,
+      "refined_mae_m": 1.6261250993846792,
+      "delta_mae_m": 0.08612209083759681,
+      "depth_pro_rmse_m": 3.2351085389916934,
+      "refined_rmse_m": 3.0334277512661396,
+      "delta_rmse_m": -0.20168078772555376
+    },
+    {
+      "sample_index": 7,
+      "sample_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "channel": "CAM_FRONT",
+      "valid_pixels": 2800,
+      "depth_pro_mae_m": 2.6767496163504463,
+      "refined_mae_m": 2.605241001674107,
+      "delta_mae_m": -0.07150861467633929,
+      "depth_pro_rmse_m": 6.474607639449778,
+      "refined_rmse_m": 5.650397277831129,
+      "delta_rmse_m": -0.8242103616186496
+    },
+    {
+      "sample_index": 7,
+      "sample_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "channel": "CAM_FRONT_RIGHT",
+      "valid_pixels": 3104,
+      "depth_pro_mae_m": 3.562399952682023,
+      "refined_mae_m": 3.0558056388933634,
+      "delta_mae_m": -0.5065943137886597,
+      "depth_pro_rmse_m": 8.625913919531365,
+      "refined_rmse_m": 6.097771604495595,
+      "delta_rmse_m": -2.5281423150357707
+    },
+    {
+      "sample_index": 7,
+      "sample_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "channel": "CAM_BACK_RIGHT",
+      "valid_pixels": 3429,
+      "depth_pro_mae_m": 6.519586500255176,
+      "refined_mae_m": 4.448991483486439,
+      "delta_mae_m": -2.0705950167687375,
+      "depth_pro_rmse_m": 10.692276882063894,
+      "refined_rmse_m": 7.467967709030379,
+      "delta_rmse_m": -3.2243091730335145
+    },
+    {
+      "sample_index": 7,
+      "sample_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "channel": "CAM_BACK",
+      "valid_pixels": 4559,
+      "depth_pro_mae_m": 4.780936831679096,
+      "refined_mae_m": 2.4396150642958983,
+      "delta_mae_m": -2.3413217673831976,
+      "depth_pro_rmse_m": 8.774036330769873,
+      "refined_rmse_m": 4.85293263757074,
+      "delta_rmse_m": -3.9211036931991323
+    },
+    {
+      "sample_index": 7,
+      "sample_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "channel": "CAM_BACK_LEFT",
+      "valid_pixels": 4278,
+      "depth_pro_mae_m": 2.228627479984806,
+      "refined_mae_m": 1.1652929048328657,
+      "delta_mae_m": -1.0633345751519403,
+      "depth_pro_rmse_m": 2.7562724145939166,
+      "refined_rmse_m": 1.6772257484997584,
+      "delta_rmse_m": -1.0790466660941582
+    }
+  ]
+}

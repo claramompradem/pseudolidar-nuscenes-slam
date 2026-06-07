@@ -1,0 +1,118 @@
+{
+  "scene_name": "scene-0061",
+  "depth_source": "refined",
+  "dataset_dir": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depth_refinement_dataset_first10",
+  "num_processed": 10,
+  "samples": [
+    {
+      "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+      "index": 0,
+      "timestamp_s": 1532402927.647951,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/ca9a282c9e77460f8360f564131a8af5/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/ca9a282c9e77460f8360f564131a8af5/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/ca9a282c9e77460f8360f564131a8af5/pcd_lidar_top_ego.ply",
+      "ring_num_points": 289146,
+      "pseudo_num_points": 26411
+    },
+    {
+      "sample_token": "39586f9d59004284a7114a68825e8eec",
+      "index": 1,
+      "timestamp_s": 1532402928.147847,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/39586f9d59004284a7114a68825e8eec/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/39586f9d59004284a7114a68825e8eec/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/39586f9d59004284a7114a68825e8eec/pcd_lidar_top_ego.ply",
+      "ring_num_points": 288066,
+      "pseudo_num_points": 26866
+    },
+    {
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "index": 2,
+      "timestamp_s": 1532402928.6980479,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/356d81f38dd9473ba590f39e266f54e5/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/356d81f38dd9473ba590f39e266f54e5/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/356d81f38dd9473ba590f39e266f54e5/pcd_lidar_top_ego.ply",
+      "ring_num_points": 249735,
+      "pseudo_num_points": 26195
+    },
+    {
+      "sample_token": "e0845f5322254dafadbbed75aaa07969",
+      "index": 3,
+      "timestamp_s": 1532402929.197353,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/e0845f5322254dafadbbed75aaa07969/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/e0845f5322254dafadbbed75aaa07969/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/e0845f5322254dafadbbed75aaa07969/pcd_lidar_top_ego.ply",
+      "ring_num_points": 241586,
+      "pseudo_num_points": 22765
+    },
+    {
+      "sample_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "index": 4,
+      "timestamp_s": 1532402929.6977968,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/c923fe08b2ff4e27975d2bf30934383b/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/c923fe08b2ff4e27975d2bf30934383b/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/c923fe08b2ff4e27975d2bf30934383b/pcd_lidar_top_ego.ply",
+      "ring_num_points": 239536,
+      "pseudo_num_points": 22767
+    },
+    {
+      "sample_token": "f1e3d9d08f044c439ce86a2d6fcca57b",
+      "index": 5,
+      "timestamp_s": 1532402930.152601,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/f1e3d9d08f044c439ce86a2d6fcca57b/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/f1e3d9d08f044c439ce86a2d6fcca57b/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/f1e3d9d08f044c439ce86a2d6fcca57b/pcd_lidar_top_ego.ply",
+      "ring_num_points": 291743,
+      "pseudo_num_points": 27353
+    },
+    {
+      "sample_token": "4f545737bf3347fbbc9af60b0be9a963",
+      "index": 6,
+      "timestamp_s": 1532402930.648325,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/4f545737bf3347fbbc9af60b0be9a963/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/4f545737bf3347fbbc9af60b0be9a963/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/4f545737bf3347fbbc9af60b0be9a963/pcd_lidar_top_ego.ply",
+      "ring_num_points": 276668,
+      "pseudo_num_points": 28875
+    },
+    {
+      "sample_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "index": 7,
+      "timestamp_s": 1532402931.198511,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/7626dde27d604ac28a0240bdd54eba7a/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/7626dde27d604ac28a0240bdd54eba7a/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/7626dde27d604ac28a0240bdd54eba7a/pcd_lidar_top_ego.ply",
+      "ring_num_points": 281686,
+      "pseudo_num_points": 28838
+    },
+    {
+      "sample_token": "be99ffc878b24aca8956bbb4e0f97d0c",
+      "index": 8,
+      "timestamp_s": 1532402931.6978328,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/be99ffc878b24aca8956bbb4e0f97d0c/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/be99ffc878b24aca8956bbb4e0f97d0c/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/be99ffc878b24aca8956bbb4e0f97d0c/pcd_lidar_top_ego.ply",
+      "ring_num_points": 283834,
+      "pseudo_num_points": 28210
+    },
+    {
+      "sample_token": "9813c23a5f1448b09bb7910fea9baf20",
+      "index": 9,
+      "timestamp_s": 1532402932.197715,
+      "depth_source": "refined",
+      "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/9813c23a5f1448b09bb7910fea9baf20/pcd_ring_6cams_ego.ply",
+      "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/9813c23a5f1448b09bb7910fea9baf20/pcd_pseudolidar_ego.ply",
+      "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/9813c23a5f1448b09bb7910fea9baf20/pcd_lidar_top_ego.ply",
+      "ring_num_points": 278827,
+      "pseudo_num_points": 27232
+    }
+  ]
+}

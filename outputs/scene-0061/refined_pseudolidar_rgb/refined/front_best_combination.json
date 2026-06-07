@@ -1,0 +1,130 @@
+{
+  "scene_name": "scene-0061",
+  "num_pairs": 4,
+  "pairs": [
+    {
+      "pair_index": 0,
+      "source_token": "ca9a282c9e77460f8360f564131a8af5",
+      "target_token": "39586f9d59004284a7114a68825e8eec",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 10107,
+          "num_target_points": 10974,
+          "metrics": {
+            "fitness": 0.9059571619812584,
+            "rmse": 0.5371265862384517,
+            "translation_error_m": 4.463948115340441,
+            "rotation_error_deg": 1.7913886753052322
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 9014,
+          "num_target_points": 10145,
+          "metrics": {
+            "fitness": 0.8986928104575164,
+            "rmse": 0.5619889011936051,
+            "translation_error_m": 5.553156713122869,
+            "rotation_error_deg": 5.849184002022867
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 1,
+      "source_token": "39586f9d59004284a7114a68825e8eec",
+      "target_token": "356d81f38dd9473ba590f39e266f54e5",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 10974,
+          "num_target_points": 11931,
+          "metrics": {
+            "fitness": 0.9037087444709084,
+            "rmse": 0.5391757585401782,
+            "translation_error_m": 3.6476076967392994,
+            "rotation_error_deg": 0.7780088980060647
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 10145,
+          "num_target_points": 11062,
+          "metrics": {
+            "fitness": 0.934199837530463,
+            "rmse": 0.4952799223322211,
+            "translation_error_m": 4.0198813094039,
+            "rotation_error_deg": 1.0483916273967708
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 2,
+      "source_token": "356d81f38dd9473ba590f39e266f54e5",
+      "target_token": "e0845f5322254dafadbbed75aaa07969",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 11931,
+          "num_target_points": 10148,
+          "metrics": {
+            "fitness": 0.8908067542213883,
+            "rmse": 0.51632288834152,
+            "translation_error_m": 3.8131620250661964,
+            "rotation_error_deg": 4.771123158122138
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 11062,
+          "num_target_points": 9874,
+          "metrics": {
+            "fitness": 0.9873029772329247,
+            "rmse": 0.45697010674288024,
+            "translation_error_m": 3.7003368774439473,
+            "rotation_error_deg": 1.133011820379076
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 3,
+      "source_token": "e0845f5322254dafadbbed75aaa07969",
+      "target_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 10148,
+          "num_target_points": 10471,
+          "metrics": {
+            "fitness": 0.9811478843736908,
+            "rmse": 0.5106009239442785,
+            "translation_error_m": 3.597450679009817,
+            "rotation_error_deg": 1.4244587988282287
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 9874,
+          "num_target_points": 9810,
+          "metrics": {
+            "fitness": 0.9721842225262198,
+            "rmse": 0.4779728781367224,
+            "translation_error_m": 3.7329131924482573,
+            "rotation_error_deg": 1.894569397619048
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "front_baseline_cfg05": {
+      "translation_error_mean_m": 3.8805421290389384,
+      "rotation_error_mean_deg": 2.1912448825654156,
+      "fitness_mean": 0.9204051362618115,
+      "rmse_mean": 0.5258065392661071,
+      "num_valid_pairs": 4
+    },
+    "front_narrow_cfg05": {
+      "translation_error_mean_m": 4.251572023104743,
+      "rotation_error_mean_deg": 2.4812892118544405,
+      "fitness_mean": 0.9480949619367811,
+      "rmse_mean": 0.49805295210135725,
+      "num_valid_pairs": 4
+    }
+  }
+}

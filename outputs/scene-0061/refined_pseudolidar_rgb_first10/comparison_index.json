@@ -1,0 +1,14 @@
+{
+  "task": "refined_pseudolidar_generation",
+  "scene_name": "scene-0061",
+  "dataset_dir": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depth_refinement_dataset_first10",
+  "checkpoint": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depth_refinement_dataset_first10/refiner_training_rgb/best_depth_refiner.pt",
+  "device": "cuda",
+  "use_rgb": true,
+  "num_samples": 10,
+  "run_summaries": {
+    "depth_pro": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/depth_pro/run_summary.json",
+    "refined": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/run_summary.json"
+  },
+  "note": "depth_pro and refined are generated from the same stored Depth Pro maps, same resolution, same camera calibration and same pseudo-LiDAR conversion. This makes the comparison controlled."
+}

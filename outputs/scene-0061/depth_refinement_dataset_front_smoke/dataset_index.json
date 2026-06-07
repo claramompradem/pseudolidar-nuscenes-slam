@@ -1,0 +1,31 @@
+{
+  "task": "depth_refinement_sparse_lidar_supervision",
+  "scene_name": "scene-0061",
+  "version": "v1.0-mini",
+  "dataroot": "/home/clara/datasets/nuscenes",
+  "num_entries": 1,
+  "max_width": 320,
+  "min_depth": 1.0,
+  "max_depth": 80.0,
+  "channels": [
+    "CAM_FRONT"
+  ],
+  "entries": [
+    {
+      "sample_index": 0,
+      "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+      "channel": "CAM_FRONT",
+      "npz_path": "npz/000_ca9a282c9e77460f8360f564131a8af5_CAM_FRONT.npz",
+      "image_path": "samples/CAM_FRONT/n015-2018-07-24-11-22-45+0800__CAM_FRONT__1532402927612460.jpg",
+      "width": 320,
+      "height": 180,
+      "valid_lidar_pixels": 3032,
+      "valid_lidar_ratio": 0.05263888888888889,
+      "depth_pro_min": 5.179679870605469,
+      "depth_pro_median": 21.128719329833984,
+      "depth_pro_max": 717.7354736328125,
+      "gt_depth_median_valid": 10.322595596313477,
+      "preview_path": "previews/000_ca9a282c9e77460f8360f564131a8af5_CAM_FRONT.png"
+    }
+  ]
+}

@@ -101,6 +101,13 @@ manifests/scene-0061_first5.json
 ```
 
 Este manifiesto fija los primeros cinco samples consecutivos de la escena `scene-0061`.
+Para la línea actual de refinamiento RGB se incluye también:
+
+```text
+manifests/scene-0061_first30.json
+```
+
+Este segundo manifiesto amplía la prueba a treinta samples consecutivos. El manifiesto `scene-0061_first10.json` queda como experimento piloto previo.
 
 ### `scripts`
 
@@ -454,6 +461,10 @@ Los más importantes son:
 - `notebooks/14_lidar_baseline_comparison.ipynb`: comparación entre registro con LiDAR real y registro con pseudo-LiDAR.
 - `notebooks/15_ablation_summary.ipynb`: resumen de ablaciones experimentales.
 - `notebooks/16_final_experimental_synthesis.ipynb`: síntesis final de resultados y conclusiones.
+- `notebooks/17_depth_refinement_dataset.ipynb`: preparación del dataset Depth Pro frente a LiDAR proyectado.
+- `notebooks/18_train_depth_refiner.ipynb`: entrenamiento del refiner encoder-decoder/U-Net.
+- `notebooks/19_evaluate_refined_depth.ipynb`: plantilla para evaluar la profundidad refinada frente a Depth Pro.
+- `notebooks/20_refined_pseudolidar_evaluation.ipynb`: reconstrucción de pseudo-LiDAR con profundidad refinada y comparación 3D frente a Depth Pro nativo.
 
 ## 8. Métricas utilizadas
 
@@ -665,7 +676,144 @@ python scripts/evaluate_lidar_registration_baseline.py \
   --output outputs/scene-0061/lidar_registration_baseline.json
 ```
 
-## 11. Outputs principales
+## 11. Línea experimental de refinamiento de profundidad
+
+Además de la pipeline principal de pseudo-LiDAR, se ha empezado una línea experimental para aprender una corrección de los mapas de profundidad de `Depth Pro` usando supervisión sparse del LiDAR real.
+
+La formulación es:
+
+```text
+Depth Pro por cámara
+-> red encoder-decoder / U-Net pequeña
+-> profundidad refinada
+
+Etiqueta:
+LIDAR_TOP proyectado sobre la cámara con calibraciones de nuScenes
+```
+
+El GT no es denso. Al proyectar `LIDAR_TOP` sobre la cámara solo hay profundidad válida en algunos píxeles. Por eso el entrenamiento usa una máscara de validez y calcula la pérdida solo donde existe profundidad LiDAR proyectada.
+
+Preparar el dataset de refinamiento:
+
+```bash
+python scripts/prepare_depth_refinement_dataset.py \
+  --manifest manifests/scene-0061_first30.json \
+  --depth-pro-root "$DEPTH_PRO_ROOT" \
+  --output-dir outputs/scene-0061/depth_refinement_dataset_first30 \
+  --max-width 640
+```
+
+Para hacer una prueba rápida con una sola cámara:
+
+```bash
+python scripts/prepare_depth_refinement_dataset.py \
+  --manifest manifests/scene-0061_first5.json \
+  --depth-pro-root "$DEPTH_PRO_ROOT" \
+  --output-dir outputs/scene-0061/depth_refinement_dataset_front_smoke \
+  --max-samples 1 \
+  --channels CAM_FRONT \
+  --max-width 320
+```
+
+Esto genera pares supervisados por cámara:
+
+```text
+depth_pro        mapa denso predicho por Depth Pro
+gt_depth         mapa sparse obtenido desde LIDAR_TOP
+valid_mask       máscara de píxeles con GT LiDAR válido
+rgb              imagen RGB usada como referencia visual
+intrinsic        intrínsecos escalados a la resolución usada
+```
+
+Entrenar la ablation solo-depth:
+
+```bash
+python scripts/train_depth_refiner.py \
+  --dataset-dir outputs/scene-0061/depth_refinement_dataset_first30 \
+  --output-dir outputs/scene-0061/depth_refinement_dataset_first30/refiner_training \
+  --epochs 20 \
+  --batch-size 2
+```
+
+Por defecto, el entrenamiento usa `--split-by-sample`, de forma que las seis cámaras de un mismo sample de nuScenes quedan siempre en el mismo split. Esto evita mezclar vistas del mismo instante entre entrenamiento y validación. Para reproducir el split aleatorio antiguo por entrada individual se puede usar:
+
+```bash
+python scripts/train_depth_refiner.py \
+  --dataset-dir outputs/scene-0061/depth_refinement_dataset_first30 \
+  --epochs 20 \
+  --batch-size 2 \
+  --no-split-by-sample
+```
+
+Las métricas `MAE` y `RMSE` se calculan ponderando por el número de píxeles LiDAR válidos, no promediando primero por batch.
+
+Entrenar la variante recomendada con `Depth Pro + RGB`:
+
+```bash
+python scripts/train_depth_refiner.py \
+  --dataset-dir outputs/scene-0061/depth_refinement_dataset_first30 \
+  --output-dir outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb \
+  --epochs 30 \
+  --batch-size 2 \
+  --use-rgb
+```
+
+En las pruebas actuales esta es la variante que se usa como línea principal presentable sobre `first30`. La variante solo-depth queda documentada como ablation reproducible, pero el resultado principal generado y usado para presentación es el refiner `Depth Pro + RGB`, que mejora tanto la evaluación sparse como la pseudo-LiDAR frente a `LIDAR_TOP`.
+
+Generar de nuevo pseudo-LiDAR con profundidad nativa y profundidad refinada:
+
+```bash
+python scripts/generate_refined_pseudolidar_from_dataset.py \
+  --dataset-dir outputs/scene-0061/depth_refinement_dataset_first30 \
+  --checkpoint outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb/best_depth_refiner.pt \
+  --output-dir outputs/scene-0061/refined_pseudolidar_rgb_first30
+```
+
+El generador usa `--device auto` por defecto: selecciona CUDA si PyTorch la detecta y cae a CPU si no está disponible.
+
+Si se quiere reproducir la ablation solo-depth, se cambia el checkpoint y la carpeta de salida a:
+
+```text
+outputs/scene-0061/depth_refinement_dataset/refiner_training/best_depth_refiner.pt
+outputs/scene-0061/refined_pseudolidar
+```
+
+Comparar ambas nubes frente a `LIDAR_TOP`:
+
+```bash
+python scripts/evaluate_refined_pseudolidar_comparison.py \
+  --depth-pro-run-summary outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/run_summary.json \
+  --refined-run-summary outputs/scene-0061/refined_pseudolidar_rgb_first30/refined/run_summary.json \
+  --output outputs/scene-0061/refined_pseudolidar_rgb_first30/refined_pseudolidar_comparison.json
+```
+
+La comparación es controlada porque ambas versiones usan los mismos mapas Depth Pro guardados, la misma resolución, las mismas calibraciones de nuScenes y la misma conversión a pseudo-LiDAR. La única diferencia es el paso por la red de refinamiento.
+
+Resumen de la prueba actual ampliada sobre `scene-0061_first30`:
+
+```text
+Profundidad sparse en validación:
+Depth Pro           MAE 4.11 m, RMSE 29.38 m
+Depth Pro + RGB     MAE 2.84 m, RMSE 5.91 m
+
+Pseudo-LiDAR frente a LIDAR_TOP:
+Depth Pro           mean NN 0.791 m, BEV IoU 0.247
+Depth Pro + RGB     mean NN 0.644 m, BEV IoU 0.255
+
+ICP básico entre frames:
+Depth Pro           error traslación 1.04 m, error rotación 1.20 deg
+Depth Pro + RGB     error traslación 0.59 m, error rotación 0.90 deg
+
+Front narrow + alineación global + ICP:
+Depth Pro           error traslación 2.94 m, error rotación 8.16 deg
+Depth Pro + RGB     error traslación 1.68 m, error rotación 8.13 deg
+```
+
+Estos números refuerzan la señal positiva observada en el experimento piloto: con 30 samples de `v1.0-mini`, el refiner RGB mejora de forma clara la profundidad sparse, la similitud geométrica con `LIDAR_TOP`, el ICP básico y la variante frontal estrecha con alineación global. La RMSE raw de Depth Pro queda muy alta porque en algunos píxeles válidos aparecen outliers grandes; si se evalúa con el recorte usado durante entrenamiento, el baseline de validación es `MAE 4.00 m, RMSE 8.48 m`. Aun así, la trayectoria acumulada sigue siendo mixta: mejora la rotación en algunas variantes, pero no la traslación. Por tanto, debe presentarse como una mejora geométrica y de registro local, no como una validación robusta de odometría/SLAM.
+
+Los notebooks `17`, `18`, `19` y `20` quedan preparados en modo presentación con la variante `first30 + RGB`. Cargan los JSON/PNG ya generados y no fuerzan reentrenamiento ni regeneración si los resultados existen. Para repetir el cálculo desde notebook, basta con cambiar los flags `RUN_DATASET_GENERATION`, `RUN_TRAINING_RGB`, `FORCE_REBUILD_REFINED_PSEUDOLIDAR` y `FORCE_REEVALUATE_METRICS` a `True`.
+
+## 12. Outputs principales
 
 Los resultados principales se generan en:
 
@@ -673,7 +821,7 @@ Los resultados principales se generan en:
 outputs/scene-0061
 ```
 
-Ficheros JSON importantes:
+Ficheros JSON importantes de la pipeline base y pruebas previas:
 
 - `outputs/scene-0061/run_summary.json`
 - `outputs/scene-0061/depth_model_comparison_common_support.json`
@@ -689,6 +837,49 @@ Ficheros JSON importantes:
 - `outputs/scene-0061/temporal_consistency_by_region.csv`
 - `outputs/scene-0061/lidar_registration_baseline.json`
 - `outputs/scene-0061/lidar_registration_baseline.csv`
+- `outputs/scene-0061/depth_refinement_dataset/dataset_index.json`
+- `outputs/scene-0061/depth_refinement_dataset/refiner_training/baseline_depth_pro_metrics.json`
+- `outputs/scene-0061/depth_refinement_dataset/refiner_training/training_history.json`
+- `outputs/scene-0061/depth_refinement_dataset/refiner_training_rgb/baseline_depth_pro_metrics.json`
+- `outputs/scene-0061/depth_refinement_dataset/refiner_training_rgb/training_history.json`
+- `outputs/scene-0061/depth_refinement_dataset/refiner_training_rgb/refined_depth_eval.json`
+- `outputs/scene-0061/depth_refinement_dataset_first10/dataset_index.json`
+- `outputs/scene-0061/depth_refinement_dataset_first10/refiner_training_rgb/baseline_depth_pro_metrics.json`
+- `outputs/scene-0061/depth_refinement_dataset_first10/refiner_training_rgb/training_history.json`
+- `outputs/scene-0061/depth_refinement_dataset_first10/refiner_training_rgb/refined_depth_eval.json`
+- `outputs/scene-0061/refined_pseudolidar/comparison_index.json`
+- `outputs/scene-0061/refined_pseudolidar/refined_pseudolidar_comparison.json`
+- `outputs/scene-0061/refined_pseudolidar/refined_pseudolidar_comparison.csv`
+- `outputs/scene-0061/refined_pseudolidar/depth_pro/pairwise_registration_metrics.json`
+- `outputs/scene-0061/refined_pseudolidar/refined/pairwise_registration_metrics.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb/comparison_index.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb/refined_pseudolidar_comparison.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb/refined_pseudolidar_comparison.csv`
+- `outputs/scene-0061/refined_pseudolidar_rgb/depth_pro/pairwise_registration_metrics.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb/refined/pairwise_registration_metrics.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first10/comparison_index.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first10/refined_pseudolidar_comparison.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first10/refined_pseudolidar_comparison.csv`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first10/depth_pro/pairwise_registration_metrics.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first10/refined/pairwise_registration_metrics.json`
+
+Ficheros JSON principales del refinamiento actual `first30 + RGB`:
+
+- `outputs/scene-0061/depth_refinement_dataset_first30/dataset_index.json`
+- `outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb/baseline_depth_pro_metrics.json`
+- `outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb/training_history.json`
+- `outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb/refined_depth_eval.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/comparison_index.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/refined_pseudolidar_comparison.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/refined_pseudolidar_comparison.csv`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/pairwise_registration_metrics.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/refined/pairwise_registration_metrics.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/front_registration_strategies.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/refined/front_registration_strategies.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/front_best_combination.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/refined/front_best_combination.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/depth_pro/accumulated_trajectory_comparison.json`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/refined/accumulated_trajectory_comparison.json`
 
 Recurso auxiliar para comparar modelos de profundidad:
 
@@ -703,6 +894,16 @@ Figuras importantes:
 - `outputs/scene-0061/lidar_vs_pseudolidar_registration_baseline.png`
 - `outputs/scene-0061/pointcloud_comparison_best_cfg05.png`
 - `outputs/scene-0061/pointcloud_comparison_narrow_cfg05.png`
+- `outputs/scene-0061/depth_refinement_dataset/refiner_training/training_curves.png`
+- `outputs/scene-0061/refined_pseudolidar/refined_pseudolidar_comparison.png`
+- `outputs/scene-0061/depth_refinement_dataset/refiner_training_rgb/training_curves.png`
+- `outputs/scene-0061/refined_pseudolidar_rgb/refined_pseudolidar_comparison.png`
+- `outputs/scene-0061/depth_refinement_dataset_first10/refiner_training_rgb/training_curves.png`
+- `outputs/scene-0061/depth_refinement_dataset_first10/refiner_training_rgb/refined_depth_examples_10.png`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first10/refined_pseudolidar_comparison.png`
+- `outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb/training_curves.png`
+- `outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb/refined_depth_examples_10.png`
+- `outputs/scene-0061/refined_pseudolidar_rgb_first30/refined_pseudolidar_comparison.png`
 
 Visualizaciones 3D interactivas:
 
@@ -716,10 +917,12 @@ Visualizaciones 3D interactivas:
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_04a_front_pair_before_registration.html`
 - `outputs/scene-0061/pointcloud_phase_visualizations/phase_04b_front_pair_after_cfg05.html`
 
-## 12. Conclusión experimental
+## 13. Conclusión experimental
 
 La pseudo-LiDAR generada desde cámaras no sustituye directamente a un LiDAR real para SLAM robusto. Sin embargo, sí contiene información geométrica útil para registro temporal si se utiliza de forma selectiva.
 
 La conclusión principal es que la pseudo-LiDAR no tiene la misma fiabilidad en todas las zonas. En este experimento, la parte frontal y las zonas cercanas presentan mejor consistencia temporal que las zonas lejanas, y la parte frontal funciona mejor que usar todo el anillo para el registro.
+
+La línea de refinamiento de profundidad añade una mejora adicional sobre el baseline, el modelo `Depth Pro + RGB` reduce el error de profundidad sparse, mejora la similitud geométrica frente a `LIDAR_TOP` y mejora el registro local con ICP. Sin embargo, la trayectoria acumulada sigue siendo mixta, por lo que el refinamiento debe interpretarse como una mejora geométrica y de registro local, no como una solución de odometría o SLAM robusto.
 
 Por tanto, el resultado no demuestra una sustitución completa del LiDAR, pero sí una utilidad real de la pseudo-LiDAR como representación intermedia para análisis geométrico, consistencia temporal y registro entre frames.

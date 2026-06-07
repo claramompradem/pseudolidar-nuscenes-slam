@@ -1,0 +1,805 @@
+{
+  "scene_name": "scene-0061",
+  "num_pairs": 29,
+  "pairs": [
+    {
+      "pair_index": 0,
+      "source_token": "ca9a282c9e77460f8360f564131a8af5",
+      "target_token": "39586f9d59004284a7114a68825e8eec",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7562,
+          "num_target_points": 8136,
+          "metrics": {
+            "fitness": 0.6344221105527639,
+            "rmse": 0.7327122336376557,
+            "translation_error_m": 8.902000477636562,
+            "rotation_error_deg": 30.24682607661607
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6322,
+          "num_target_points": 7360,
+          "metrics": {
+            "fitness": 0.7221914775871611,
+            "rmse": 0.5345768349370503,
+            "translation_error_m": 1.4289620386121733,
+            "rotation_error_deg": 2.384763490115222
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 1,
+      "source_token": "39586f9d59004284a7114a68825e8eec",
+      "target_token": "356d81f38dd9473ba590f39e266f54e5",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8136,
+          "num_target_points": 9123,
+          "metrics": {
+            "fitness": 0.6649122807017543,
+            "rmse": 0.6072229214469391,
+            "translation_error_m": 0.9774026326630595,
+            "rotation_error_deg": 2.3734881130735466
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 7360,
+          "num_target_points": 8216,
+          "metrics": {
+            "fitness": 0.7139773340528872,
+            "rmse": 0.6009811459719536,
+            "translation_error_m": 0.5579143815822646,
+            "rotation_error_deg": 0.7043049361274054
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 2,
+      "source_token": "356d81f38dd9473ba590f39e266f54e5",
+      "target_token": "e0845f5322254dafadbbed75aaa07969",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9123,
+          "num_target_points": 6399,
+          "metrics": {
+            "fitness": 0.8567293777134588,
+            "rmse": 0.5532811265862014,
+            "translation_error_m": 3.596750569790726,
+            "rotation_error_deg": 2.5582840386020367
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 8216,
+          "num_target_points": 6026,
+          "metrics": {
+            "fitness": 0.928078250863061,
+            "rmse": 0.5662920265708684,
+            "translation_error_m": 3.2076537602919273,
+            "rotation_error_deg": 2.701203962062369
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 3,
+      "source_token": "e0845f5322254dafadbbed75aaa07969",
+      "target_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6399,
+          "num_target_points": 6972,
+          "metrics": {
+            "fitness": 0.9500304692260817,
+            "rmse": 0.5852428048171406,
+            "translation_error_m": 3.9173089769653004,
+            "rotation_error_deg": 3.1183015747751535
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6026,
+          "num_target_points": 6333,
+          "metrics": {
+            "fitness": 0.9463902787705504,
+            "rmse": 0.5726009894683833,
+            "translation_error_m": 4.077946247891743,
+            "rotation_error_deg": 1.365818022885796
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 4,
+      "source_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "target_token": "f1e3d9d08f044c439ce86a2d6fcca57b",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6972,
+          "num_target_points": 8798,
+          "metrics": {
+            "fitness": 0.9640062597809077,
+            "rmse": 0.6021352768831921,
+            "translation_error_m": 2.8286833967190725,
+            "rotation_error_deg": 1.4950172706759086
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6333,
+          "num_target_points": 6280,
+          "metrics": {
+            "fitness": 0.9367007672634271,
+            "rmse": 0.6252733183245657,
+            "translation_error_m": 2.7809674998836442,
+            "rotation_error_deg": 4.393923757727369
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 5,
+      "source_token": "f1e3d9d08f044c439ce86a2d6fcca57b",
+      "target_token": "4f545737bf3347fbbc9af60b0be9a963",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8798,
+          "num_target_points": 8474,
+          "metrics": {
+            "fitness": 0.9258982035928144,
+            "rmse": 0.6722606518322914,
+            "translation_error_m": 7.5811410797676,
+            "rotation_error_deg": 1.8921526702458809
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6280,
+          "num_target_points": 5913,
+          "metrics": {
+            "fitness": 0.958433734939759,
+            "rmse": 0.5618738961354329,
+            "translation_error_m": 5.271336018059916,
+            "rotation_error_deg": 1.7637950587592588
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 6,
+      "source_token": "4f545737bf3347fbbc9af60b0be9a963",
+      "target_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8474,
+          "num_target_points": 8442,
+          "metrics": {
+            "fitness": 0.9648729446935725,
+            "rmse": 0.5917343359461714,
+            "translation_error_m": 4.876437346243188,
+            "rotation_error_deg": 4.352990722252582
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5913,
+          "num_target_points": 5932,
+          "metrics": {
+            "fitness": 0.9424753050552005,
+            "rmse": 0.6091081828429726,
+            "translation_error_m": 4.9843571168544605,
+            "rotation_error_deg": 3.61473705732154
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 7,
+      "source_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "target_token": "be99ffc878b24aca8956bbb4e0f97d0c",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8442,
+          "num_target_points": 8367,
+          "metrics": {
+            "fitness": 0.961038961038961,
+            "rmse": 0.6005255834639405,
+            "translation_error_m": 2.6402443800004036,
+            "rotation_error_deg": 1.8065391532065853
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5932,
+          "num_target_points": 5625,
+          "metrics": {
+            "fitness": 0.7990571596935769,
+            "rmse": 0.6518589384717288,
+            "translation_error_m": 0.5328499873257085,
+            "rotation_error_deg": 2.6350809035329394
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 8,
+      "source_token": "be99ffc878b24aca8956bbb4e0f97d0c",
+      "target_token": "9813c23a5f1448b09bb7910fea9baf20",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8367,
+          "num_target_points": 7983,
+          "metrics": {
+            "fitness": 0.7045944005743001,
+            "rmse": 0.5940450306562849,
+            "translation_error_m": 1.5010589950049733,
+            "rotation_error_deg": 1.458160661216776
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5625,
+          "num_target_points": 4901,
+          "metrics": {
+            "fitness": 0.8514680483592401,
+            "rmse": 0.656851796449497,
+            "translation_error_m": 1.8228180705297587,
+            "rotation_error_deg": 2.477648843692032
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 9,
+      "source_token": "9813c23a5f1448b09bb7910fea9baf20",
+      "target_token": "023c4df2d451409881d8e6ea82f14704",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7983,
+          "num_target_points": 7705,
+          "metrics": {
+            "fitness": 0.9287769784172661,
+            "rmse": 0.655477588072123,
+            "translation_error_m": 4.306902356562836,
+            "rotation_error_deg": 4.364496684444975
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4901,
+          "num_target_points": 4951,
+          "metrics": {
+            "fitness": 0.8175559380378657,
+            "rmse": 0.5763172400802239,
+            "translation_error_m": 0.9280929900280993,
+            "rotation_error_deg": 1.418743968571691
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 10,
+      "source_token": "023c4df2d451409881d8e6ea82f14704",
+      "target_token": "c235638ed66145988d17f9d0601923f2",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7705,
+          "num_target_points": 7969,
+          "metrics": {
+            "fitness": 0.934220251293422,
+            "rmse": 0.658409519872744,
+            "translation_error_m": 3.973135504544655,
+            "rotation_error_deg": 1.3009835063386095
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4951,
+          "num_target_points": 6498,
+          "metrics": {
+            "fitness": 0.9520624303232998,
+            "rmse": 0.6096022246362008,
+            "translation_error_m": 4.004231152395142,
+            "rotation_error_deg": 2.543554689059434
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 11,
+      "source_token": "c235638ed66145988d17f9d0601923f2",
+      "target_token": "bc3c8a953f6b4dcdb77b521d89f3d9d5",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7969,
+          "num_target_points": 7557,
+          "metrics": {
+            "fitness": 0.9323111443530292,
+            "rmse": 0.7209457515346304,
+            "translation_error_m": 6.188856307840979,
+            "rotation_error_deg": 11.210930622198156
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6498,
+          "num_target_points": 6158,
+          "metrics": {
+            "fitness": 0.9075508228460794,
+            "rmse": 0.5944880458997438,
+            "translation_error_m": 3.2073868622199457,
+            "rotation_error_deg": 1.4661501598473077
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 12,
+      "source_token": "bc3c8a953f6b4dcdb77b521d89f3d9d5",
+      "target_token": "1e3d79dae62742a0ad64c91679863358",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7557,
+          "num_target_points": 6081,
+          "metrics": {
+            "fitness": 0.9082712661701293,
+            "rmse": 0.6509943616481749,
+            "translation_error_m": 0.6936467512763342,
+            "rotation_error_deg": 1.5006752413451858
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6158,
+          "num_target_points": 5080,
+          "metrics": {
+            "fitness": 0.87467498699948,
+            "rmse": 0.6314733835639246,
+            "translation_error_m": 1.1812020116792048,
+            "rotation_error_deg": 3.6025863654056396
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 13,
+      "source_token": "1e3d79dae62742a0ad64c91679863358",
+      "target_token": "2afb9d32310e4546a71cbe432911eca2",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6081,
+          "num_target_points": 6364,
+          "metrics": {
+            "fitness": 0.799628079962808,
+            "rmse": 0.7327373041952151,
+            "translation_error_m": 15.185554628628564,
+            "rotation_error_deg": 52.42577357693883
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5080,
+          "num_target_points": 5616,
+          "metrics": {
+            "fitness": 0.7151370679380215,
+            "rmse": 0.7935180052241882,
+            "translation_error_m": 0.770484739956678,
+            "rotation_error_deg": 179.43881845153254
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 14,
+      "source_token": "2afb9d32310e4546a71cbe432911eca2",
+      "target_token": "cd21dbfc3bd749c7b10a5c42562e0c42",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6364,
+          "num_target_points": 7483,
+          "metrics": {
+            "fitness": 0.7599828252468871,
+            "rmse": 0.7396689233630004,
+            "translation_error_m": 6.943033246988196,
+            "rotation_error_deg": 179.82170804874443
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5616,
+          "num_target_points": 6539,
+          "metrics": {
+            "fitness": 0.8787721123829344,
+            "rmse": 0.602121673848305,
+            "translation_error_m": 0.2503542264826765,
+            "rotation_error_deg": 1.3604506544056647
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 15,
+      "source_token": "cd21dbfc3bd749c7b10a5c42562e0c42",
+      "target_token": "88449a5cb1644a199c1c11f6ac034867",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7483,
+          "num_target_points": 7512,
+          "metrics": {
+            "fitness": 0.865689381933439,
+            "rmse": 0.578156321762225,
+            "translation_error_m": 0.4448174143180019,
+            "rotation_error_deg": 1.1592178001057478
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6539,
+          "num_target_points": 6505,
+          "metrics": {
+            "fitness": 0.9519519519519519,
+            "rmse": 0.5574713784542555,
+            "translation_error_m": 0.5127102926745385,
+            "rotation_error_deg": 1.5325105274225017
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 16,
+      "source_token": "88449a5cb1644a199c1c11f6ac034867",
+      "target_token": "2ff86dc19c4644a1a88ce5ba848f56e5",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7512,
+          "num_target_points": 8295,
+          "metrics": {
+            "fitness": 0.877143996808935,
+            "rmse": 0.5923925830891196,
+            "translation_error_m": 2.098923554317096,
+            "rotation_error_deg": 5.935943786030345
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6505,
+          "num_target_points": 7199,
+          "metrics": {
+            "fitness": 0.9433673469387756,
+            "rmse": 0.5768393763134805,
+            "translation_error_m": 0.8916746590645498,
+            "rotation_error_deg": 4.038675984224014
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 17,
+      "source_token": "2ff86dc19c4644a1a88ce5ba848f56e5",
+      "target_token": "bf2938e43c6f487497cda76b51bfc406",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8295,
+          "num_target_points": 9784,
+          "metrics": {
+            "fitness": 0.716255442670537,
+            "rmse": 0.7647626955975684,
+            "translation_error_m": 18.524137757406265,
+            "rotation_error_deg": 94.04973584667799
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 7199,
+          "num_target_points": 8260,
+          "metrics": {
+            "fitness": 0.8972667295004713,
+            "rmse": 0.5228493624293679,
+            "translation_error_m": 0.3353360651405247,
+            "rotation_error_deg": 0.8491517429235044
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 18,
+      "source_token": "bf2938e43c6f487497cda76b51bfc406",
+      "target_token": "b26e791522294bec90f86fd72226e35c",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9784,
+          "num_target_points": 10167,
+          "metrics": {
+            "fitness": 0.9505141388174807,
+            "rmse": 0.5939313147779717,
+            "translation_error_m": 1.9627538400720108,
+            "rotation_error_deg": 1.358669050896722
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 8260,
+          "num_target_points": 9013,
+          "metrics": {
+            "fitness": 0.9156939040207522,
+            "rmse": 0.5093645927862586,
+            "translation_error_m": 0.9751243900672555,
+            "rotation_error_deg": 1.867092507187493
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 19,
+      "source_token": "b26e791522294bec90f86fd72226e35c",
+      "target_token": "c844bf5a9f2243ff8f4bf2c85fe218ff",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 10167,
+          "num_target_points": 9531,
+          "metrics": {
+            "fitness": 0.9716485824291214,
+            "rmse": 0.5297570534878138,
+            "translation_error_m": 2.0846530112983186,
+            "rotation_error_deg": 1.0371337507599332
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 9013,
+          "num_target_points": 8570,
+          "metrics": {
+            "fitness": 0.9610154125113327,
+            "rmse": 0.5079671799140537,
+            "translation_error_m": 2.019510291691763,
+            "rotation_error_deg": 1.0539689667146632
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 20,
+      "source_token": "c844bf5a9f2243ff8f4bf2c85fe218ff",
+      "target_token": "fedfb3a6cb804635a0f47143f9ca8d6f",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9531,
+          "num_target_points": 9376,
+          "metrics": {
+            "fitness": 0.9029649595687331,
+            "rmse": 0.515679713294346,
+            "translation_error_m": 0.29963308573532255,
+            "rotation_error_deg": 0.660381535789989
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 8570,
+          "num_target_points": 8653,
+          "metrics": {
+            "fitness": 0.9367088607594937,
+            "rmse": 0.4784732595144365,
+            "translation_error_m": 0.5370998123213105,
+            "rotation_error_deg": 1.2937238913325975
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 21,
+      "source_token": "fedfb3a6cb804635a0f47143f9ca8d6f",
+      "target_token": "965f6af5a92449348409029a5f048a38",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9376,
+          "num_target_points": 9569,
+          "metrics": {
+            "fitness": 0.9366391184573003,
+            "rmse": 0.5632174197421617,
+            "translation_error_m": 0.6065109393315553,
+            "rotation_error_deg": 0.6724210811579558
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 8653,
+          "num_target_points": 8742,
+          "metrics": {
+            "fitness": 0.9461325966850829,
+            "rmse": 0.48123468774311806,
+            "translation_error_m": 0.9822464046982,
+            "rotation_error_deg": 0.45356844514794215
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 22,
+      "source_token": "965f6af5a92449348409029a5f048a38",
+      "target_token": "4711bcd34644420da8bc77163431888e",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9569,
+          "num_target_points": 9860,
+          "metrics": {
+            "fitness": 0.9265291349981903,
+            "rmse": 0.49407260957995786,
+            "translation_error_m": 0.589540660028946,
+            "rotation_error_deg": 0.9083352325314723
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 8742,
+          "num_target_points": 8267,
+          "metrics": {
+            "fitness": 0.9450307827616534,
+            "rmse": 0.5027707704888726,
+            "translation_error_m": 0.7693480867500218,
+            "rotation_error_deg": 1.2907671984899807
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 23,
+      "source_token": "4711bcd34644420da8bc77163431888e",
+      "target_token": "a34fabc7aa674713b71f98ec541eb2d4",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9860,
+          "num_target_points": 9013,
+          "metrics": {
+            "fitness": 0.953757225433526,
+            "rmse": 0.5778776350926487,
+            "translation_error_m": 0.842566735983946,
+            "rotation_error_deg": 1.9708908547662363
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 8267,
+          "num_target_points": 6399,
+          "metrics": {
+            "fitness": 0.9309366130558183,
+            "rmse": 0.5299741053655691,
+            "translation_error_m": 1.3892661881546189,
+            "rotation_error_deg": 2.7484875527828208
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 24,
+      "source_token": "a34fabc7aa674713b71f98ec541eb2d4",
+      "target_token": "c78067571d104caba7c568a847d56971",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9013,
+          "num_target_points": 9250,
+          "metrics": {
+            "fitness": 0.9557522123893806,
+            "rmse": 0.4732068734607988,
+            "translation_error_m": 0.7363205871644762,
+            "rotation_error_deg": 0.6624666810872447
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6399,
+          "num_target_points": 5845,
+          "metrics": {
+            "fitness": 0.9724385859796285,
+            "rmse": 0.43357061430976646,
+            "translation_error_m": 1.2076462660557763,
+            "rotation_error_deg": 2.1055911205642674
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 25,
+      "source_token": "c78067571d104caba7c568a847d56971",
+      "target_token": "4246e57f018745c9b2bc68feb3d71b58",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9250,
+          "num_target_points": 9064,
+          "metrics": {
+            "fitness": 0.9658480429777436,
+            "rmse": 0.5046289649240917,
+            "translation_error_m": 0.6843171333778005,
+            "rotation_error_deg": 1.1302212120658288
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5845,
+          "num_target_points": 5742,
+          "metrics": {
+            "fitness": 0.9702072538860104,
+            "rmse": 0.45027887643055103,
+            "translation_error_m": 1.595703392755971,
+            "rotation_error_deg": 2.898051645490045
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 26,
+      "source_token": "4246e57f018745c9b2bc68feb3d71b58",
+      "target_token": "a7acb150914b40bdad9a2dc4e657cbf9",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 9064,
+          "num_target_points": 8814,
+          "metrics": {
+            "fitness": 0.9617244157937147,
+            "rmse": 0.48875014519571564,
+            "translation_error_m": 0.8569946867168574,
+            "rotation_error_deg": 0.6906232163531254
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5742,
+          "num_target_points": 6089,
+          "metrics": {
+            "fitness": 0.9763934426229508,
+            "rmse": 0.3893777572284111,
+            "translation_error_m": 1.033915882053852,
+            "rotation_error_deg": 1.1115333671253202
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 27,
+      "source_token": "a7acb150914b40bdad9a2dc4e657cbf9",
+      "target_token": "0cd661df01aa40c3bb3a773ba86f753a",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8814,
+          "num_target_points": 8332,
+          "metrics": {
+            "fitness": 0.9843286742905548,
+            "rmse": 0.5357678952480225,
+            "translation_error_m": 0.6062622396279972,
+            "rotation_error_deg": 2.225324198857787
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6089,
+          "num_target_points": 5901,
+          "metrics": {
+            "fitness": 0.986624203821656,
+            "rmse": 0.4339776396732485,
+            "translation_error_m": 1.0060295611426129,
+            "rotation_error_deg": 2.1228290648821893
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 28,
+      "source_token": "0cd661df01aa40c3bb3a773ba86f753a",
+      "target_token": "378a3a3e9af346308ab9dff8ced46d9c",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 8332,
+          "num_target_points": 8165,
+          "metrics": {
+            "fitness": 0.9792566983578219,
+            "rmse": 0.449153409880589,
+            "translation_error_m": 0.5943675124076693,
+            "rotation_error_deg": 0.6238035434358795
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5901,
+          "num_target_points": 6064,
+          "metrics": {
+            "fitness": 0.9900990099009901,
+            "rmse": 0.3768762285114518,
+            "translation_error_m": 0.5965401970130934,
+            "rotation_error_deg": 0.4081696395758205
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "front_baseline_cfg05": {
+      "translation_error_mean_m": 3.6222053727040935,
+      "rotation_error_mean_deg": 14.241775715558308,
+      "fitness_mean": 0.8909568130429185,
+      "rmse_mean": 0.5985775189340943,
+      "num_valid_pairs": 29
+    },
+    "front_narrow_cfg05": {
+      "translation_error_mean_m": 1.6847830549440492,
+      "rotation_error_mean_deg": 8.12571386120377,
+      "fitness_mean": 0.905806634810659,
+      "rmse_mean": 0.5495849493650994,
+      "num_valid_pairs": 29
+    }
+  }
+}

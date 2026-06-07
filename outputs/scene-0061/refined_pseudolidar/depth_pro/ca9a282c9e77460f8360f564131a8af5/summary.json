@@ -1,0 +1,11 @@
+{
+  "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+  "index": 0,
+  "timestamp_s": null,
+  "depth_source": "depth_pro",
+  "ring_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar/depth_pro/ca9a282c9e77460f8360f564131a8af5/pcd_ring_6cams_ego.ply",
+  "pseudo_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar/depth_pro/ca9a282c9e77460f8360f564131a8af5/pcd_pseudolidar_ego.ply",
+  "lidar_path": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/refined_pseudolidar/depth_pro/ca9a282c9e77460f8360f564131a8af5/pcd_lidar_top_ego.ply",
+  "ring_num_points": 197359,
+  "pseudo_num_points": 23683
+}

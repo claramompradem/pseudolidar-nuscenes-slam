@@ -1,0 +1,265 @@
+{
+  "scene_name": "scene-0061",
+  "num_pairs": 9,
+  "pairs": [
+    {
+      "pair_index": 0,
+      "source_token": "ca9a282c9e77460f8360f564131a8af5",
+      "target_token": "39586f9d59004284a7114a68825e8eec",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6852,
+          "num_target_points": 6446,
+          "metrics": {
+            "fitness": 0.7681954137587238,
+            "rmse": 0.6188404336012223,
+            "translation_error_m": 0.6748702142326883,
+            "rotation_error_deg": 0.6896564566204522
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5335,
+          "num_target_points": 5167,
+          "metrics": {
+            "fitness": 0.7361206305688828,
+            "rmse": 0.5585495521820468,
+            "translation_error_m": 0.47218979289195123,
+            "rotation_error_deg": 0.6790309595705872
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 1,
+      "source_token": "39586f9d59004284a7114a68825e8eec",
+      "target_token": "356d81f38dd9473ba590f39e266f54e5",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6446,
+          "num_target_points": 5979,
+          "metrics": {
+            "fitness": 0.6620926243567753,
+            "rmse": 0.6081555886253049,
+            "translation_error_m": 0.8586945208565618,
+            "rotation_error_deg": 3.06487142267316
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5167,
+          "num_target_points": 5312,
+          "metrics": {
+            "fitness": 0.7349304482225657,
+            "rmse": 0.5524041707550257,
+            "translation_error_m": 0.471962417760018,
+            "rotation_error_deg": 1.6934724143055022
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 2,
+      "source_token": "356d81f38dd9473ba590f39e266f54e5",
+      "target_token": "e0845f5322254dafadbbed75aaa07969",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 5979,
+          "num_target_points": 4349,
+          "metrics": {
+            "fitness": 0.7690198766278272,
+            "rmse": 0.6205074464150816,
+            "translation_error_m": 4.0252231907462175,
+            "rotation_error_deg": 8.718224211196485
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5312,
+          "num_target_points": 4183,
+          "metrics": {
+            "fitness": 0.8765432098765432,
+            "rmse": 0.5970500579894458,
+            "translation_error_m": 2.8300551323560645,
+            "rotation_error_deg": 2.3929251912098626
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 3,
+      "source_token": "e0845f5322254dafadbbed75aaa07969",
+      "target_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 4349,
+          "num_target_points": 4520,
+          "metrics": {
+            "fitness": 0.864448051948052,
+            "rmse": 0.6497580320519508,
+            "translation_error_m": 1.834144613008108,
+            "rotation_error_deg": 1.3543340897122682
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4183,
+          "num_target_points": 4132,
+          "metrics": {
+            "fitness": 0.9081455805892548,
+            "rmse": 0.6099413350619861,
+            "translation_error_m": 2.384585520231576,
+            "rotation_error_deg": 0.8341271510382712
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 4,
+      "source_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "target_token": "f1e3d9d08f044c439ce86a2d6fcca57b",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 4520,
+          "num_target_points": 6978,
+          "metrics": {
+            "fitness": 0.9500745156482862,
+            "rmse": 0.6337864399870559,
+            "translation_error_m": 2.23582130459622,
+            "rotation_error_deg": 2.0895550787483796
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4132,
+          "num_target_points": 4683,
+          "metrics": {
+            "fitness": 0.9236111111111112,
+            "rmse": 0.6183497634410742,
+            "translation_error_m": 2.059049890701713,
+            "rotation_error_deg": 2.6520218423289252
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 5,
+      "source_token": "f1e3d9d08f044c439ce86a2d6fcca57b",
+      "target_token": "4f545737bf3347fbbc9af60b0be9a963",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6978,
+          "num_target_points": 6590,
+          "metrics": {
+            "fitness": 0.8005128205128205,
+            "rmse": 0.6053321086737028,
+            "translation_error_m": 1.9051193302359122,
+            "rotation_error_deg": 5.048764763168434
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4683,
+          "num_target_points": 4643,
+          "metrics": {
+            "fitness": 0.8166295471417966,
+            "rmse": 0.6593664708506941,
+            "translation_error_m": 2.07601961906149,
+            "rotation_error_deg": 6.015830029327339
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 6,
+      "source_token": "4f545737bf3347fbbc9af60b0be9a963",
+      "target_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6590,
+          "num_target_points": 6949,
+          "metrics": {
+            "fitness": 0.9374319912948857,
+            "rmse": 0.6103909654172772,
+            "translation_error_m": 4.125466126757028,
+            "rotation_error_deg": 5.589847923741248
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4643,
+          "num_target_points": 5305,
+          "metrics": {
+            "fitness": 0.9368895567242674,
+            "rmse": 0.5363440071534583,
+            "translation_error_m": 3.3641682125847954,
+            "rotation_error_deg": 1.5172288260013496
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 7,
+      "source_token": "7626dde27d604ac28a0240bdd54eba7a",
+      "target_token": "be99ffc878b24aca8956bbb4e0f97d0c",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6949,
+          "num_target_points": 7115,
+          "metrics": {
+            "fitness": 0.927187008905186,
+            "rmse": 0.6349694832900115,
+            "translation_error_m": 2.74142389210622,
+            "rotation_error_deg": 3.641658573154556
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5305,
+          "num_target_points": 4685,
+          "metrics": {
+            "fitness": 0.9290369297610427,
+            "rmse": 0.6468496806514826,
+            "translation_error_m": 2.3598922310441504,
+            "rotation_error_deg": 1.1655142333310253
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 8,
+      "source_token": "be99ffc878b24aca8956bbb4e0f97d0c",
+      "target_token": "9813c23a5f1448b09bb7910fea9baf20",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7115,
+          "num_target_points": 6887,
+          "metrics": {
+            "fitness": 0.944093339815265,
+            "rmse": 0.6378386809831756,
+            "translation_error_m": 2.619393795581494,
+            "rotation_error_deg": 2.8710253380217363
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4685,
+          "num_target_points": 4251,
+          "metrics": {
+            "fitness": 0.9446107784431138,
+            "rmse": 0.6466328182958742,
+            "translation_error_m": 4.075727336246835,
+            "rotation_error_deg": 3.151030507956102
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "front_baseline_cfg05": {
+      "translation_error_mean_m": 2.33557299868005,
+      "rotation_error_mean_deg": 3.674215317448524,
+      "fitness_mean": 0.8470061825408692,
+      "rmse_mean": 0.6243976865605314,
+      "num_valid_pairs": 9
+    },
+    "front_narrow_cfg05": {
+      "translation_error_mean_m": 2.2326277947642885,
+      "rotation_error_mean_deg": 2.2334645727854405,
+      "fitness_mean": 0.8673908658265087,
+      "rmse_mean": 0.6028319840423431,
+      "num_valid_pairs": 9
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "scene_name": "scene-0061",
+  "num_pairs": 4,
+  "pairs": [
+    {
+      "pair_index": 0,
+      "source_token": "ca9a282c9e77460f8360f564131a8af5",
+      "target_token": "39586f9d59004284a7114a68825e8eec",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6345,
+          "num_target_points": 6721,
+          "metrics": {
+            "fitness": 0.6863876863876864,
+            "rmse": 0.6120269264412073,
+            "translation_error_m": 1.6719900758255695,
+            "rotation_error_deg": 0.4977902748853791
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 4774,
+          "num_target_points": 5294,
+          "metrics": {
+            "fitness": 0.8631651693158259,
+            "rmse": 0.6404381651000992,
+            "translation_error_m": 2.452711510045449,
+            "rotation_error_deg": 1.9659185521934655
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 1,
+      "source_token": "39586f9d59004284a7114a68825e8eec",
+      "target_token": "356d81f38dd9473ba590f39e266f54e5",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 6721,
+          "num_target_points": 7655,
+          "metrics": {
+            "fitness": 0.6511511511511512,
+            "rmse": 0.6028320667089015,
+            "translation_error_m": 1.957705430465282,
+            "rotation_error_deg": 2.0454493155316533
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5294,
+          "num_target_points": 6316,
+          "metrics": {
+            "fitness": 0.6952642415923129,
+            "rmse": 0.5898258449277503,
+            "translation_error_m": 1.9633075838093639,
+            "rotation_error_deg": 0.5345776332724077
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 2,
+      "source_token": "356d81f38dd9473ba590f39e266f54e5",
+      "target_token": "e0845f5322254dafadbbed75aaa07969",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 7655,
+          "num_target_points": 5850,
+          "metrics": {
+            "fitness": 0.7142857142857143,
+            "rmse": 0.6019539581475972,
+            "translation_error_m": 1.4581925322621174,
+            "rotation_error_deg": 1.5866239336191597
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 6316,
+          "num_target_points": 5088,
+          "metrics": {
+            "fitness": 0.7852998065764023,
+            "rmse": 0.6217584486836947,
+            "translation_error_m": 1.3523876821726637,
+            "rotation_error_deg": 1.426634848509247
+          }
+        }
+      }
+    },
+    {
+      "pair_index": 3,
+      "source_token": "e0845f5322254dafadbbed75aaa07969",
+      "target_token": "c923fe08b2ff4e27975d2bf30934383b",
+      "strategies": {
+        "front_baseline_cfg05": {
+          "num_source_points": 5850,
+          "num_target_points": 5734,
+          "metrics": {
+            "fitness": 0.9227193492155723,
+            "rmse": 0.632413245908487,
+            "translation_error_m": 2.9431433888311958,
+            "rotation_error_deg": 0.4473066866758352
+          }
+        },
+        "front_narrow_cfg05": {
+          "num_source_points": 5088,
+          "num_target_points": 4572,
+          "metrics": {
+            "fitness": 0.6671814671814672,
+            "rmse": 0.8642798146264804,
+            "translation_error_m": 36.0780342115304,
+            "rotation_error_deg": 176.00037996363602
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "front_baseline_cfg05": {
+      "translation_error_mean_m": 2.007757856846041,
+      "rotation_error_mean_deg": 1.144292552678007,
+      "fitness_mean": 0.7436359752600311,
+      "rmse_mean": 0.6123065493015483,
+      "num_valid_pairs": 4
+    },
+    "front_narrow_cfg05": {
+      "translation_error_mean_m": 10.46161024688947,
+      "rotation_error_mean_deg": 44.981877749402784,
+      "fitness_mean": 0.7527276711665021,
+      "rmse_mean": 0.6790755683345061,
+      "num_valid_pairs": 4
+    }
+  }
+}
