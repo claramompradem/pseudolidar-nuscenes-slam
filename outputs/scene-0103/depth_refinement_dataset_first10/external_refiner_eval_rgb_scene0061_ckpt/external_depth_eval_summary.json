@@ -1,0 +1,29 @@
+{
+  "task": "external_scene_depth_refiner_validation",
+  "train_scene": "scene-0061_first30",
+  "validation_scene": "scene-0103_first10",
+  "dataset_dir": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0103/depth_refinement_dataset_first10",
+  "checkpoint": "/home/clara/ml-depth-pro/slam_readiness_nuscenes/outputs/scene-0061/depth_refinement_dataset_first30/refiner_training_rgb/best_depth_refiner.pt",
+  "device": "cuda",
+  "use_rgb": true,
+  "max_depth_m": 80.0,
+  "num_entries": 60,
+  "num_unique_samples": 10,
+  "metrics_note": "Masked metrics over valid projected LIDAR_TOP pixels only. The model weights are frozen; no training on scene-0103.",
+  "depth_pro": {
+    "mae_m": 3.187184470338983,
+    "rmse_m": 6.172712214295146,
+    "valid_pixels": 184375
+  },
+  "refined": {
+    "mae_m": 3.024274894067797,
+    "rmse_m": 5.700440244669779,
+    "valid_pixels": 184375
+  },
+  "delta": {
+    "mae_m": -0.1629095762711863,
+    "rmse_m": -0.47227196962536677,
+    "mae_relative_pct": -5.111394642741196,
+    "rmse_relative_pct": -7.6509636806272985
+  }
+}
